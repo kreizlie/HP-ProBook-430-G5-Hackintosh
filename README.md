@@ -1,8 +1,8 @@
 # HP-ProBook-430G5-Hackintosh
 
-OpenCore setup for HP ProBook 430G5
+OpenCore setup for HP ProBook 430 G5
 
-###### Laptop specifications:
+###### Laptop Specifications:
 - Intel Core i7 8550 Quad Core CPU (KabyLake R)
 - Intel UHD 620 Graphics
 - 16GB DDR4 2400MHz RAM
@@ -16,6 +16,7 @@ OpenCore setup for HP ProBook 430G5
 
 ###### What works:
 - Intel UHD 620 Graphics QE/CI
+- HiDPI Scaled Resolution (Running 1440 x 810 @60Hz)
 - USB-3.0 and USB-C Ports
 - Ethernet (LAN)
 - Audio (All Inputs & Outputs)
@@ -36,8 +37,11 @@ OpenCore setup for HP ProBook 430G5
 - SD Card Reader
 
 ###### Remaining issues:
-- Low battery warning notification appear while running on battery with percentage > 5%
+- Low battery warning notification appear while running on full battery
 - External HDMI display not showing on boot, require re-plug
+
+#### Bootloader
+- OpenCore 0.5.8
 
 #### Kexts
 - Lilu
@@ -58,3 +62,7 @@ OpenCore setup for HP ProBook 430G5
 - gfxutil
 - SSDTTime
 - CPUFriendFriend
+
+###### Thanks to:
+- https://www.tonymacx86.com/threads/guide-lenovo-v330-15ikb-using-clover-uefi-hotpatch.265841/
+- https://www.tonymacx86.com/threads/guide-hp-probook-elitebook-zbook-using-clover-uefi-hotpatch-10-11.189416/
