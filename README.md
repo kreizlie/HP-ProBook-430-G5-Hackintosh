@@ -38,3 +38,23 @@ OpenCore setup for HP ProBook 430G5
 ###### Remaining issues:
 - Low battery warning notification appear while running on battery with percentage > 5%
 - External HDMI display not showing on boot, require re-plug
+
+#### Kexts
+- Lilu
+- WhateverGreen
+- AppleALC
+- NoTouchID
+- VirtualSMC
+- VoodooI2C
+- VoodooPS2Controller (removed VoodooPS2Mouse, VoodooPS2Trackpad)
+- CPUFriend
+- AirportBrcmFixup
+- BrcmPatchRAM
+- RTL8111
+
+#### Tools
+- ProperTree
+- GenSMBIOS
+- gfxutil
+- SSDTTime
+- CPUFriendFriend
