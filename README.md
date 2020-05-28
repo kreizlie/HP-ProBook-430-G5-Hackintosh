@@ -36,5 +36,5 @@ OpenCore setup for HP ProBook 430G5
 - SD Card Reader
 
 ###### Remaining issues:
-- Low battery warning notification appear while battery percentage > 5%
+- Low battery warning notification appear while running on battery with percentage > 5%
 - External HDMI display not showing on boot, require re-plug
