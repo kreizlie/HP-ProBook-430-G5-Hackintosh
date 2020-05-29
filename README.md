@@ -14,6 +14,13 @@ OpenCore setup for HP ProBook 430 G5
 - SD Card Reader
 - Samsung 970 EVO NVME M.2 250GB SSD (upgraded)
 
+###### BIOS Setup:
+- Disable Vt-d
+- Disable Secure Boot
+- Disable Wake on LAN
+- Disable Wake on USB
+- Enable Hyperthreading
+
 ###### What works:
 - Intel UHD 620 Graphics QE/CI
 - HiDPI Scaled Resolution (Running 1440 x 810 @60Hz)
@@ -62,6 +69,8 @@ OpenCore setup for HP ProBook 430 G5
 - gfxutil
 - SSDTTime
 - CPUFriendFriend
+- MaciASL
+- HexFiend binary editor
 
 ###### Thanks to:
 - https://www.tonymacx86.com/threads/guide-lenovo-v330-15ikb-using-clover-uefi-hotpatch.265841/
