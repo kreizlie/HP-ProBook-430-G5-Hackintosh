@@ -1,4 +1,4 @@
-// Add _STA method to SLPB device
+// SSDT SLPB
 DefinitionBlock("", "SSDT", 2, "ACDT", "SLPB", 0)
 {
     External (_SB.SLPB, DeviceObj)
@@ -10,9 +10,9 @@ DefinitionBlock("", "SSDT", 2, "ACDT", "SLPB", 0)
         }
     }
     
-    // This is the original SLPB
     // Device (SLPB)
     // {
-    //    Name (_HID, EisaId ("PNP0C0E"))  // _HID: Hardware ID
+    //    Name (_HID, EisaId ("PNP0C0E"))
+    //    -- define STA method
     // }
 }

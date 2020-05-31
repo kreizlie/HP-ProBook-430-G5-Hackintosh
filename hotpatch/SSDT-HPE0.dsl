@@ -1,4 +1,4 @@
-// Fix HPET
+// SSDT Fix HPET
 DefinitionBlock ("", "SSDT", 2, "ACDT", "_HPE0", 0)
 {
     External (_SB.PCI0.LPCB, DeviceObj)
@@ -33,6 +33,7 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "_HPE0", 0)
         {
             Name (_HID, EisaId ("PNP0103"))
             Name (_UID, Zero)
+            
             Name (BUF0, ResourceTemplate ()
             {
                 IRQNoFlags() { 0, 8 }

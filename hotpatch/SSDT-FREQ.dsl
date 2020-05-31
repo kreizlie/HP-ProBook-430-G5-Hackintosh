@@ -1,3 +1,4 @@
+// SSDT FREQ
 DefinitionBlock ("", "SSDT", 1, "ACDT", "freqdata", 0x00000001)
 {
     //

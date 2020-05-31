@@ -1,10 +1,10 @@
-// Fix RTC
+// SSDT Fix RTC
 DefinitionBlock ("", "SSDT", 2, "ACDT", "_RTC0", 0)
 {
     External (_SB.PCI0.LPCB, DeviceObj)
     External (_SB.PCI0.LPCB.RTC, DeviceObj)
     
-    // Disable original RTC
+    // Disable RTC
     Scope (_SB.PCI0.LPCB.RTC)
     {
         Method (_STA, 0, NotSerialized)

@@ -1,4 +1,4 @@
-// SSDT GPIO to enable I2C trackpad
+// SSDT GPIO
 DefinitionBlock("", "SSDT", 2, "ACDT", "_GPIO", 0)
 {
     External(GPEN, FieldUnitObj)
@@ -18,12 +18,10 @@ DefinitionBlock("", "SSDT", 2, "ACDT", "_GPIO", 0)
     //         {
     //             Return (Zero)
     //         }
-    //
     //         If (LEqual (GPEN, Zero))
     //         {
     //             Return (Zero)
     //         }
-    //
     //         Return (0x0F) -- we expect this
     //     }
     // }

@@ -1,10 +1,10 @@
-// Fix TIMR
+// SSDT Fix TIMR
 DefinitionBlock ("", "SSDT", 2, "ACDT", "_TIM0", 0)
 {
     External (_SB.PCI0.LPCB, DeviceObj)
     External (_SB.PCI0.LPCB.TIMR, DeviceObj)
 
-    // Disable original TIMR
+    // Disable TIMR
     Scope (_SB.PCI0.LPCB.TIMR)
     {
         Method (_STA, 0, NotSerialized)

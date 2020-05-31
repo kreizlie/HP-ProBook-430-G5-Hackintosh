@@ -1,4 +1,4 @@
-// Fake ambient light sensor device
+// SSDT Fake ALS
 DefinitionBlock("", "SSDT", 2, "ACDT", "_ALS0", 0)
 {
     Device(_SB.ALS0)
@@ -6,6 +6,7 @@ DefinitionBlock("", "SSDT", 2, "ACDT", "_ALS0", 0)
         Name(_HID, "ACPI0008")
         Name(_CID, "smc-als")
         Name(_ALI, 300)
+        
         Name(_ALR, Package()
         {
             //Package() { 70, 0 },
