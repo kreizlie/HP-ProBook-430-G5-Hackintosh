@@ -2,8 +2,10 @@
 
 OpenCore setup for HP ProBook 430 G5
 
-###### macOS Version:
-- macOS Catalina 10.15, updated to 10.15.5 after install
+###### macOS Info:
+- macOS Catalina 10.15
+- SIP is enabled
+- System update works normally
 
 ###### Laptop Specifications:
 - Intel Core i7 8550 Quad Core CPU (KabyLake R)
