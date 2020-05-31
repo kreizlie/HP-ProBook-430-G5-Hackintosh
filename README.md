@@ -18,11 +18,33 @@ OpenCore setup for HP ProBook 430 G5
 - Samsung 970 EVO NVME M.2 250GB SSD (upgraded)
 
 ###### BIOS Setup:
-- Disable Vt-d
+- Disable TPM Embedded Security
+- Disable Physical Presence Interface
+- Disable Intel SGX
+- Enable System Management Command
+- Disable Fast Boot
+- Disable Network (PXE) Boot
+- Disable Power On When AC Detected
+- Disable Power On When Lid is Opened
 - Disable Secure Boot
-- Disable Wake on LAN
-- Disable Wake on USB
+- Disable Legacy Boot Support
+- Disable Intel Optane Controller
+- Enable Turbo Boost
 - Enable Hyperthreading
+- Enable Multi-Processor
+- Enable VTx
+- Disable VTd
+- Enable Turbo Boost on DC
+- Enable DPTF
+- Disable Media Card Reader
+- Enable All USB Ports
+- Enable Runtime Power Management
+- Disable Extended Idle Power States
+- Enable Deep Sleep
+- Enable Wake when Lid is Opened
+- Disable Wake when AC is detected
+- Disable Wake on USB
+- Enable Power Control
 
 ###### What works:
 - Intel UHD 620 Graphics QE/CI
