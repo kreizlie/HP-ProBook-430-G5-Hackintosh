@@ -2,6 +2,9 @@
 
 OpenCore setup for HP ProBook 430 G5
 
+###### macOS Version:
+- macOS Catalina 10.15
+
 ###### Laptop Specifications:
 - Intel Core i7 8550 Quad Core CPU (KabyLake R)
 - Intel UHD 620 Graphics
