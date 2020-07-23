@@ -43,7 +43,8 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 - Enable Power Control
 
 ##### What works:
-- Intel Graphics Acceleration
+- macOS Catalina 10.15.6
+- Intel HD QE/CI
 - HiDPI Scaled Resolution (1440 x 810)
 - USB 3.0 and USB Type-C Ports
 - Ethernet
