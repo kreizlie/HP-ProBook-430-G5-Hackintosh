@@ -2,6 +2,7 @@
 DefinitionBlock ("", "SSDT", 2, "ACDT", "XSPI", 0)
 {
     External (_SB.PCI0, DeviceObj)
+    
     Scope (_SB.PCI0)
     {
         Device (XSPI)
@@ -9,7 +10,14 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "XSPI", 0)
             Name (_ADR, 0x001F0005)
             Method (_STA, 0, NotSerialized)
             {
-                Return (0x0F)
+                If (_OSI ("Darwin"))
+                {
+                    Return (0x0F)
+                }
+                Else
+                {
+                    Return (Zero)
+                }
             }
         }
     }

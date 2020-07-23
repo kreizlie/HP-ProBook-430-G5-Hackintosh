@@ -1,7 +1,8 @@
 // SSDT PMCR
 DefinitionBlock ("", "SSDT", 2, "ACDT", "PMCR", 0)
 {
-    External(_SB.PCI0.LPCB, DeviceObj)
+    External (_SB.PCI0.LPCB, DeviceObj)
+    
     Scope (_SB.PCI0.LPCB)
     {
         Device (PMCR)
@@ -18,7 +19,14 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "PMCR", 0)
             
             Method (_STA, 0, NotSerialized)
             {
-                Return (0x0F)
+                If (_OSI ("Darwin"))
+                {
+                    Return (0x0F)
+                }
+                Else
+                {
+                    Return (Zero)
+                }
             }
         }
     }

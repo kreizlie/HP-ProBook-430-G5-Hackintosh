@@ -1,17 +1,34 @@
 // SSDT GPRW
 DefinitionBlock ("", "SSDT", 2, "ACDT", "GPRW", 0)
 {
-    External(XPRW, MethodObj)
-    Method (GPRW, 2, NotSerialized)
+    External (XPRW, MethodObj)
+    
+    Scope (\)
     {
-        If (0x6D == Arg0)
+        Method (GPRW, 2, NotSerialized)
         {
-            Return (Package () { 0x6D, Zero })
+            If (_OSI ("Darwin"))
+            {
+                If (0x6D == Arg0)
+                {
+                    Return (Package ()
+                    {
+                        0x6D,
+                        Zero
+                    })
+                }
+                
+                If (0x0D == Arg0)
+                {
+                    Return (Package ()
+                    {
+                        0x0D,
+                        Zero
+                    })
+                }
+            }
+            
+            Return (XPRW (Arg0, Arg1))
         }
-        If (0x0D == Arg0)
-        {
-            Return (Package () { 0x0D, Zero })
-        }
-        Return (XPRW (Arg0, Arg1))
     }
 }

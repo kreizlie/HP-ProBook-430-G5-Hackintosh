@@ -1,4 +1,4 @@
-// SSDT SBUS
+// SSDT SMBUS Compatibility
 DefinitionBlock ("", "SSDT", 2, "ACDT", "_SBUS", 0)
 {
     External (_SB.PCI0, DeviceObj)
@@ -9,6 +9,17 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "_SBUS", 0)
         Device (MCHC)
         {
             Name (_ADR, Zero)
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Return (0x0F)
+                }
+                Else
+                {
+                    Return (Zero)
+                }
+            }
         }
     }
 
@@ -30,7 +41,36 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "_SBUS", 0)
                     {
                         Return (Buffer () { 0x57 })
                     }
-                    Return (Package () { "address", 0x57 })
+                    
+                    Return (Package () 
+                    {
+                        "address",
+                        0x57
+                    })
+                }
+                
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    If (_OSI ("Darwin"))
+                    {
+                        Return (0x0F)
+                    }
+                    Else
+                    {
+                        Return (Zero)
+                    }
+                }
+            }
+
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Return (0x0F)
+                }
+                Else
+                {
+                    Return (Zero)
                 }
             }
         }
