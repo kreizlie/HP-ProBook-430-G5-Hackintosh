@@ -1,22 +1,20 @@
-AirportBrcmFixup.kext
-AppleALC.kext
-BrcmBluetoothInjector.kext
-BrcmFirmwareData.kext
-BrcmPatchRAM3.kext
-CPUFriend.kext
-Lilu.kext
-NoTouchID.kext
-RealtekRTL8111.kext
-RtWlanDisk.kext
-RtWlanU.kext
-RtWlanU1827.kext
-SMCBatteryManager.kext
-SMCLightSensor.kext
-SMCProcessor.kext
-SMCSuperIO.kext
-USBPorts.kext
-VirtualSMC.kext
-VoodooI2C.kext
-VoodooI2CHID.kext
-VoodooPS2Controller.kext
-WhateverGreen.kext
+List of Kexts:
+- AirportBrcmFixup.kext
+- AppleALC.kext
+- BrcmBluetoothInjector.kext
+- BrcmFirmwareData.kext
+- BrcmPatchRAM3.kext
+- CPUFriend.kext
+- Lilu.kext
+- NoTouchID.kext
+- RealtekRTL8111.kext
+- SMCBatteryManager.kext
+- SMCLightSensor.kext
+- SMCProcessor.kext
+- SMCSuperIO.kext
+- USBPorts.kext
+- VirtualSMC.kext
+- VoodooI2C.kext
+- VoodooI2CHID.kext
+- VoodooPS2Controller.kext
+- WhateverGreen.kext
