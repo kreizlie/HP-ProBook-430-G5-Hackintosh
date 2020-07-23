@@ -2,7 +2,7 @@
 
 OpenCore setup for running Hackintosh on HP ProBook 430 G5
 
-###### Laptop Specifications:
+##### Laptop Specifications:
 - Intel Core i7 8550U CPU (KabyLake R)
 - Intel UHD 620 Graphics
 - 16GB DDR4 2400MHz RAM
@@ -14,7 +14,7 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 - SD Card Reader
 - 250GB Samsung 970 EVO NVME M.2 SSD (upgraded)
 
-###### BIOS Setup:
+##### BIOS Setup:
 - Disable TPM Security
 - Disable Physical Presence Interface
 - Disable Intel SGX
@@ -42,7 +42,7 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 - Disable Wake on USB
 - Enable Power Control
 
-###### What works:
+##### What works:
 - Intel Graphics Acceleration
 - HiDPI Scaled Resolution (1440 x 810)
 - USB 3.0 and USB Type-C Ports
@@ -59,10 +59,10 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 - Multi-Gesture Trackpad
 - Integrated Camera
 
-###### What doesn't work:
+##### What doesn't work:
 - FingerPrint Reader
 - SD Card Reader
 
-###### Thanks to:
+##### Thanks to:
 - https://www.tonymacx86.com/threads/guide-lenovo-v330-15ikb-using-clover-uefi-hotpatch.265841/
 - https://www.tonymacx86.com/threads/guide-hp-probook-elitebook-zbook-using-clover-uefi-hotpatch-10-11.189416/
