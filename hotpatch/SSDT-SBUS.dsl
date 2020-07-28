@@ -1,27 +1,7 @@
-// SSDT SMBUS Compatibility
-DefinitionBlock ("", "SSDT", 2, "ACDT", "_SBUS", 0)
+// SSDT SMBUS
+DefinitionBlock ("", "SSDT", 2, "ACDT", "SBUS", 0)
 {
-    External (_SB.PCI0, DeviceObj)
     External (_SB.PCI0.SBUS, DeviceObj)
-
-    Scope (_SB.PCI0)
-    {
-        Device (MCHC)
-        {
-            Name (_ADR, Zero)
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Return (0x0F)
-                }
-                Else
-                {
-                    Return (Zero)
-                }
-            }
-        }
-    }
 
     Scope (_SB.PCI0.SBUS)
     {

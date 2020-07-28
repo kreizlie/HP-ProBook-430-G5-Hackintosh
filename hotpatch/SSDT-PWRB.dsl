@@ -2,7 +2,6 @@
 DefinitionBlock ("", "SSDT", 2, "ACDT", "PWRB", 0)
 {
     External (_SB.PWRB, DeviceObj)
-    External (_SB.PWRB.XSTA, MethodObj)
     
     Scope (_SB.PWRB)
     {
@@ -14,7 +13,7 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "PWRB", 0)
             }
             Else
             {
-                Return (\_SB.PWRB.XSTA ())
+                Return (0x0B)
             }
         }
     }

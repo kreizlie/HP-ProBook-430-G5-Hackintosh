@@ -1,15 +1,15 @@
-// SSDT XSPI
-DefinitionBlock ("", "SSDT", 2, "ACDT", "XSPI", 0)
+// SSDT MCHC
+DefinitionBlock ("", "SSDT", 2, "ACDT", "MCHC", 0)
 {
     External (_SB.PCI0, DeviceObj)
-    
+
     Scope (_SB.PCI0)
     {
-        Device (XSPI)
+        Device (MCHC)
         {
-            Name (_ADR, 0x001F0005)
+            Name (_ADR, Zero)
             
-            Method (_STA, 0, NotSerialized)
+            Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (_OSI ("Darwin"))
                 {

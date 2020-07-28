@@ -1,6 +1,6 @@
 // Override for host defined _OSI to handle "Darwin"...
 
-DefinitionBlock ("", "SSDT", 2, "ACDT", "_XOSI", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "XOSI", 0)
 {
     // All _OSI calls in DSDT are routed to XOSI...
     // As written, this XOSI simulates "Windows 2015" (which is Windows 10)

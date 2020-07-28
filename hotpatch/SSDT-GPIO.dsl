@@ -1,5 +1,5 @@
 // SSDT Enable GPIO
-DefinitionBlock ("", "SSDT", 2, "ACDT", "_GPIO", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "GPIO", 0)
 {
     External (GPEN, FieldUnitObj)
     External (SBRG, FieldUnitObj)

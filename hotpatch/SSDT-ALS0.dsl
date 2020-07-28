@@ -1,5 +1,5 @@
 // SSDT Fake ALS
-DefinitionBlock ("", "SSDT", 2, "ACDT", "_ALS0", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "ALS0", 0)
 {
     Scope (\)
     {

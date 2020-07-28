@@ -1,5 +1,5 @@
 // SSDT Fix TIMER
-DefinitionBlock ("", "SSDT", 2, "ACDT", "_TIM0", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "TIM0", 0)
 {
     External (_SB.PCI0.LPCB.TIMR, DeviceObj)
     External (_SB.PCI0.LPCB, DeviceObj)

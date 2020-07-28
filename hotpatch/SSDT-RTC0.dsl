@@ -1,5 +1,5 @@
 // SSDT Fix RTC
-DefinitionBlock ("", "SSDT", 2, "ACDT", "_RTC0", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "RTC0", 0)
 {
     External (_SB.PCI0.LPCB, DeviceObj)
     External (_SB.PCI0.LPCB.RTC, DeviceObj)

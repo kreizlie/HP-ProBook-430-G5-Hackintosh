@@ -1,5 +1,5 @@
 // SSDT Fix HPET
-DefinitionBlock ("", "SSDT", 2, "ACDT", "_HPE0", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "HPE0", 0)
 {
     External (_SB.PCI0.LPCB, DeviceObj)
     External (_SB.PCI0.LPCB.HPET, DeviceObj)
