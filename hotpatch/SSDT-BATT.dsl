@@ -456,29 +456,31 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
                 }
 
                 Store (Local0, Index (DerefOf (Index (NBST, Arg0)), Zero))
-                If (And (Local0, One))
-                {
-                    If (LOr (LLess (Local3, 0x0190), LGreater (Local3, 0x1964)))
-                    {
-                        Store (DerefOf (Index (DerefOf (Index (NBST, Arg0)), One)), Local5)
-                        If (LOr (LLess (Local5, 0x0190), LGreater (Local5, 0x1964)))
-                        {
-                            Store (0x0D7A, Local3)
-                        }
-                        Else
-                        {
-                            Store (Local5, Local3)
-                        }
-                    }
+                //If (And (Local0, One))
+                //{
+                //    If (LOr (LLess (Local3, 0x0190), LGreater (Local3, 0x1964)))
+                //    {
+                //        Store (DerefOf (Index (DerefOf (Index (NBST, Arg0)), One)), Local5)
+                //        If (LOr (LLess (Local5, 0x0190), LGreater (Local5, 0x1964)))
+                //        {
+                //            Store (0x0D7A, Local3)
+                //        }
+                //        Else
+                //        {
+                //            Store (Local5, Local3)
+                //        }
+                //    }
+                //
+                //    Store (0xFFFFFFFF, Local3)
+                //}
+                //ElseIf (LEqual (And (Local0, 0x02), Zero))
+                //{
+                //    Store (Zero, Local3)
+                //}
 
-                    Store (0xFFFFFFFF, Local3)
-                }
-                ElseIf (LEqual (And (Local0, 0x02), Zero))
-                {
-                    Store (Zero, Local3)
-                }
-
+                Store (Zero, Local3)
                 Store (Local3, Index (DerefOf (Index (NBST, Arg0)), One))
+                
                 Acquire (BTMX, 0xFFFF)
                 And (NGBT, Not (Local7), NGBT)
                 Release (BTMX)
