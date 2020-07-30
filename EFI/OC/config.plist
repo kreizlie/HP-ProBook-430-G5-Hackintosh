@@ -390,6 +390,32 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Rename EC method GBAW to XBAW</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>BEdCQVcA</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data></data>
+				<key>Replace</key>
+				<data>BFhCQVcA</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data></data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Rename EC method GACW to XACW</string>
 				<key>Count</key>
 				<integer>0</integer>
@@ -416,13 +442,13 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Rename EC method GBAW to XBAW</string>
+				<string>Rename SB package NBTI to NZTI</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>BEdCQVcA</data>
+				<data>CE5CVEkS</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -430,7 +456,33 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>BFhCQVcA</data>
+				<data>CE5aVEkS</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data></data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Rename SB method BTST to BXST</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>K0JUU1QJ</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data></data>
+				<key>Replace</key>
+				<data>K0JYU1QJ</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -1186,7 +1238,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>brcmfx-country=ID -v debug=0x100 keepsyms=1</string>
+				<string>brcmfx-country=ID</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>

@@ -9,34 +9,30 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
     External (_SB.PCI0.LPCB.EC.XBTC, MethodObj)
     External (_SB.PCI0.LPCB.EC.SXTC, MethodObj)
     External (_SB.PCI0.LPCB.EC.XBAW, MethodObj)
-    External (_SB.PCI0.LPCB.EC.XACW, MethodObj)    
+    External (_SB.PCI0.LPCB.EC.XACW, MethodObj)
+    External (_SB.BXST, MethodObj)
     External (_TZ.XCGC, MethodObj)
 
-    External (_SB.PCI0.LPCB.EC.BTDR, MethodObj)
-    External (_SB.PCI0.LPCB.EC.BSTA, MethodObj)
-    External (_SB.PCI0.LPCB.EC.BTMX, MutexObj)
     External (_SB.PCI0.LPCB.EC.NGBF, IntObj)
-    External (_SB.PCI0.LPCB.EC.ECMX, MutexObj)
     External (_SB.PCI0.LPCB.EC.ECRG, IntObj)
-    External (_SB.NDBS, PkgObj)
-    External (_SB.NBST, PkgObj)
-    External (_SB.PCI0.LPCB.EC.BSEL, FieldUnitObj)
     External (_SB.PCI0.LPCB.EC.NGBT, IntObj)
-    External (_SB.NBTI, PkgObj)
     External (_SB.PCI0.LPCB.EC.NLB1, IntObj)
     External (_SB.PCI0.LPCB.EC.NLO2, IntObj)
-    External (_SB.PCI0.LPCB.EC.GBSS, MethodObj)
-    External (_SB.PCI0.LPCB.EC.BST, FieldUnitObj)
-    External (_SB.PCI0.LPCB.EC.GACS, MethodObj)
     External (_SB.PCI0.LPCB.EC.NDCB, IntObj)
     External (_SB.PCI0.LPCB.EC.NLB2, IntObj)
-    External (_SB.PCI0.LPCB.EC.LB1, FieldUnitObj)
-    External (_SB.PCI0.LPCB.EC.LB2, FieldUnitObj)
-    External (_SB.PCI0.LPCB.EC.BATP, FieldUnitObj)
+    External (_SB.PCI0.LPCB.EC.BTDR, MethodObj)
+    External (_SB.PCI0.LPCB.EC.BSTA, MethodObj)
+    External (_SB.PCI0.LPCB.EC.GBSS, MethodObj)
+    External (_SB.PCI0.LPCB.EC.GACS, MethodObj)
     External (_SB.PCI0.LPCB.EC.GBMF, MethodObj)
     External (_SB.PCI0.LPCB.EC.GCTL, MethodObj)
     External (_SB.PCI0.LPCB.EC.GDNM, MethodObj)
     External (_SB.PCI0.LPCB.EC.GDCH, MethodObj)
+    External (_SB.PCI0.LPCB.EC.BST, FieldUnitObj)
+    External (_SB.PCI0.LPCB.EC.LB1, FieldUnitObj)
+    External (_SB.PCI0.LPCB.EC.LB2, FieldUnitObj)
+    External (_SB.PCI0.LPCB.EC.BSEL, FieldUnitObj)
+    External (_SB.PCI0.LPCB.EC.BATP, FieldUnitObj)
     External (_SB.PCI0.LPCB.EC.BRCC, FieldUnitObj)
     External (_SB.PCI0.LPCB.EC.BRCV, FieldUnitObj)
     External (_SB.PCI0.LPCB.EC.BATN, FieldUnitObj)
@@ -44,170 +40,145 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
     External (_SB.PCI0.LPCB.EC.INCH, FieldUnitObj)
     External (_SB.PCI0.LPCB.EC.IDIS, FieldUnitObj)
     External (_SB.PCI0.LPCB.EC.PSSB, FieldUnitObj)
-    
-    Method (B1B2, 2, NotSerialized)
-    {
-        ShiftLeft (Arg1, 8, Local0)
-        Or (Arg0, Local0, Local0)
-        Return (Local0)
-    }
-    
-    Scope (_TZ)
-    {
-        Method (GCGC, 0, Serialized)
-        {
-            If (_OSI ("Darwin"))
-            {
-                Name (LTMP, Buffer (0x02){})
-                If (\_SB.PCI0.LPCB.EC.ECRG)
-                {
-                    Acquire (\_SB.PCI0.LPCB.EC.ECMX, 0xFFFF)
-                    Store (B1B2 (\_SB.PCI0.LPCB.EC.BPR1, \_SB.PCI0.LPCB.EC.BPR2), LTMP)
-                    Release (\_SB.PCI0.LPCB.EC.ECMX)
-                }
+    External (_SB.PCI0.LPCB.EC.ECMX, MutexObj)
+    External (_SB.PCI0.LPCB.EC.BTMX, MutexObj)
+    External (_SB.NDBS, PkgObj)
+    External (_SB.NBST, PkgObj)
+    External (_SB.NBTI, PkgObj)
 
-                Return (LTMP)
-            }
-            Else
-            {
-                Return (\_TZ.XCGC ())
-            }
-        }
-    }
-    
     Scope (_SB.PCI0.LPCB.EC)
     {
         OperationRegion (ECR2, EmbeddedControl, Zero, 0xFF)
         Field (ECR2, ByteAcc, NoLock, Preserve)
         {
-            /* PMCD */,   32, 
-            /* S0FL */,   8, 
-            /* SXF0 */,   8, 
-            /* SXF1 */,   8, 
+            /* PMCD */,   32,
+            /* S0FL */,   8,
+            /* SXF0 */,   8,
+            /* SXF1 */,   8,
             /* CPWR */,   16,
             /* CVLT */,   16,
-            /* CCUR */,   16, 
-            /* DIDX */,   8, 
-            /* CIDX */,   8, 
-            /* PMCC */,   8, 
-            /* PMEP */,   8, 
-            Offset (0x22), 
-            /* CRZN */,   8, 
-            /* THTA */,   8, 
-            /* HYST */,   8, 
-            /* CRIT */,   8, 
-            /* TEMP */,   8, 
-            /* TENA */,   8, 
-            Offset (0x29), 
-            /* TOAD */,   8, 
-            /* PHTP */,   8, 
-            /* THEM */,   8, 
-            /* TMPO */,   8, 
-            /* AFAN */,   8, 
-            /* FRDC */,   8, 
-            /* FTGC */,   8, 
-            /* PLTP */,   8, 
-            Offset (0x32), 
-            /* DTMP */,   8, 
-            Offset (0x35), 
-            /* FR2C */,   8, 
-            /* FT2C */,   8, 
-            /* BCVD */,   8, 
-            Offset (0x3F), 
-            /* SNMD */,   8, 
-            /* ABDI */,   8, 
-            /* ABAD */,   8, 
-            /* ABIX */,   8, 
-            /* ABDA */,   8, 
-            /* ABST */,   8, 
-            /* PORI */,   8, 
-            Offset (0x4C), 
-            /* PSSB */,   8, 
-            Offset (0x4E), 
-            /* SLID */,   8, 
-            /* SLDT */,   8, 
-            Offset (0x5E), 
-            /* PPST */,   8, 
-            /* PPVP */,   8, 
-            /* UCHC */,   8, 
-            /* UCHS */,   8, 
-            /* UCDB */,   8, 
-            /* UCCS */,   8, 
-            /* UCPN */,   8, 
-            Offset (0x70), 
-            /* WKTR */,   16, 
-            /* S5TR */,   16, 
-            /* AS4F */,   8, 
-            Offset (0x78), 
-                      ,   7, 
-            /* BCML */,   1, 
-            /* BRIM */,   1, 
-                      ,   1, 
-            /* LPMS */,   1, 
-                      ,   1, 
-            /* EXTP */,   1, 
-            /* BKDT */,   1, 
-            /* BOTP */,   1, 
-            Offset (0x7A), 
-                      ,   3, 
-            /* CCFG */,   1, 
-            Offset (0x7B), 
-                      ,   1, 
-            /* PPUI */,   1, 
-            Offset (0x80), 
-            /* ESID */,   8, 
-                      ,   4, 
-            /* SLPT */,   4, 
-            /* FNSW */,   1, 
-            /* SFNC */,   1, 
-            /* ACPI */,   1, 
-                      ,   1, 
-                      ,   1, 
-                      ,   1, 
-                      ,   1, 
-            /* DETF */,   1, 
-            /* LIDS */,   1, 
-            /* TBLT */,   1, 
-                      ,   1, 
-            /* LIDN */,   1, 
-                      ,   1, 
-            /* COMM */,   1, 
-            /* PME  */,   1, 
-            /* SBVD */,   1, 
-            /* ADP  */,   1, 
-            /* ADID */,   2, 
-            /* LCTV */,   1, 
-            /* BATP */,   4, 
-            /* BPU  */,   1, 
-            Offset (0x86), 
-            /* BSEL */,   4, 
-            Offset (0x87), 
-            /* LB1  */,   8, 
-            /* LB2  */,   8, 
+            /* CCUR */,   16,
+            /* DIDX */,   8,
+            /* CIDX */,   8,
+            /* PMCC */,   8,
+            /* PMEP */,   8,
+            Offset (0x22),
+            /* CRZN */,   8,
+            /* THTA */,   8,
+            /* HYST */,   8,
+            /* CRIT */,   8,
+            /* TEMP */,   8,
+            /* TENA */,   8,
+            Offset (0x29),
+            /* TOAD */,   8,
+            /* PHTP */,   8,
+            /* THEM */,   8,
+            /* TMPO */,   8,
+            /* AFAN */,   8,
+            /* FRDC */,   8,
+            /* FTGC */,   8,
+            /* PLTP */,   8,
+            Offset (0x32),
+            /* DTMP */,   8,
+            Offset (0x35),
+            /* FR2C */,   8,
+            /* FT2C */,   8,
+            /* BCVD */,   8,
+            Offset (0x3F),
+            /* SNMD */,   8,
+            /* ABDI */,   8,
+            /* ABAD */,   8,
+            /* ABIX */,   8,
+            /* ABDA */,   8,
+            /* ABST */,   8,
+            /* PORI */,   8,
+            Offset (0x4C),
+            /* PSSB */,   8,
+            Offset (0x4E),
+            /* SLID */,   8,
+            /* SLDT */,   8,
+            Offset (0x5E),
+            /* PPST */,   8,
+            /* PPVP */,   8,
+            /* UCHC */,   8,
+            /* UCHS */,   8,
+            /* UCDB */,   8,
+            /* UCCS */,   8,
+            /* UCPN */,   8,
+            Offset (0x70),
+            /* WKTR */,   16,
+            /* S5TR */,   16,
+            /* AS4F */,   8,
+            Offset (0x78),
+                      ,   7,
+            /* BCML */,   1,
+            /* BRIM */,   1,
+                      ,   1,
+            /* LPMS */,   1,
+                      ,   1,
+            /* EXTP */,   1,
+            /* BKDT */,   1,
+            /* BOTP */,   1,
+            Offset (0x7A),
+                      ,   3,
+            /* CCFG */,   1,
+            Offset (0x7B),
+                      ,   1,
+            /* PPUI */,   1,
+            Offset (0x80),
+            /* ESID */,   8,
+                      ,   4,
+            /* SLPT */,   4,
+            /* FNSW */,   1,
+            /* SFNC */,   1,
+            /* ACPI */,   1,
+                      ,   1,
+                      ,   1,
+                      ,   1,
+                      ,   1,
+            /* DETF */,   1,
+            /* LIDS */,   1,
+            /* TBLT */,   1,
+                      ,   1,
+            /* LIDN */,   1,
+                      ,   1,
+            /* COMM */,   1,
+            /* PME  */,   1,
+            /* SBVD */,   1,
+            /* ADP  */,   1,
+            /* ADID */,   2,
+            /* LCTV */,   1,
+            /* BATP */,   4,
+            /* BPU  */,   1,
+            Offset (0x86),
+            /* BSEL */,   4,
+            Offset (0x87),
+            /* LB1  */,   8,
+            /* LB2  */,   8,
             /* BDC    ,   16, */
             BDC1      ,   8,
             BDC2      ,   8,
-            Offset (0x8D), 
-            /* BFC    ,   16, */ 
+            Offset (0x8D),
+            /* BFC    ,   16, */
             BFC1      ,   8,
             BFC2      ,   8,
             /* BRTE   ,   16, */
             RTE1      ,   8,
             RTE2      ,   8,
-            /* BTC  */,   1, 
-            Offset (0x92), 
+            /* BTC  */,   1,
+            Offset (0x92),
             /* BME    ,   16, */
             BME1      ,   8,
             BME2      ,   8,
-            /* BDN  */,   8, 
+            /* BDN  */,   8,
             /* BDV    ,   16, */
-            BDV1      ,   8, 
+            BDV1      ,   8,
             BDV2      ,   8,
             /* BCV1   ,   16, */
             CV11      ,   8,
             CV12      ,   8,
-            /* BST  */,   4, 
-            Offset (0x9B), 
+            /* BST  */,   4,
+            Offset (0x9B),
             /* BATE   ,   16, */
             ATE1      ,   8,
             ATE2      ,   8,
@@ -235,113 +206,113 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
             /* BCV4   ,   16, */
             CV41      ,   8,
             CV42      ,   8,
-            /* BCW */ ,   16, 
+            /* BCW */ ,   16,
             /* BATF   ,   16, */
             ATF1      ,   8,
             ATF2      ,   8,
-            /* BCL */ ,   16, 
+            /* BCL */ ,   16,
             /* MAXC   ,   16, */
             MAX1      ,   8,
             MAX2      ,   8,
-            /* BCG1 */,   8, 
-            /* BT1I */,   1, 
-            /* BT2I */,   1, 
-                      ,   2, 
-            /* BATN */,   4, 
+            /* BCG1 */,   8,
+            /* BT1I */,   1,
+            /* BT2I */,   1,
+                      ,   2,
+            /* BATN */,   4,
             /* BSTS   ,   16, */
             STS1      ,   8,
             STS2      ,   8,
-            /* BCG2 */,   8, 
-            Offset (0xBD), 
-            /* BMO  */,   8, 
-            Offset (0xBF), 
-            /* BRCV */,   8, 
-            Offset (0xC1), 
-            /* BIF  */,   8, 
-            /* BRCC */,   8, 
-            Offset (0xC4), 
-            /* CPSN */,   8, 
-            /* SCPS */,   8, 
-            Offset (0xC7), 
-            /* MXCG */,   8, 
-            /* MNCG */,   8, 
+            /* BCG2 */,   8,
+            Offset (0xBD),
+            /* BMO  */,   8,
+            Offset (0xBF),
+            /* BRCV */,   8,
+            Offset (0xC1),
+            /* BIF  */,   8,
+            /* BRCC */,   8,
+            Offset (0xC4),
+            /* CPSN */,   8,
+            /* SCPS */,   8,
+            Offset (0xC7),
+            /* MXCG */,   8,
+            /* MNCG */,   8,
             /* BSN    ,   16, */
             BSN1      ,   8,
             BSN2      ,   8,
             /* BDAT   ,   16, */
             BDA1      ,   8,
             BDA2      ,   8,
-            /* BMF  */,   8, 
-            Offset (0xCF), 
-            /* CTLB */,   8, 
-            Offset (0xD1), 
-            /* BTY  */,   8, 
-            Offset (0xD5), 
-            /* MFAC */,   8, 
-            /* CFAN */,   8, 
-            /* PFAN */,   8, 
-            /* OCPS */,   8, 
-            /* OCPR */,   8, 
-            /* OCPE */,   8, 
-            /* TMP1 */,   8, 
-            /* TMP2 */,   8, 
-            /* NABT */,   4, 
-            /* BCM  */,   4, 
-            /* CCBQ */,   16, 
+            /* BMF  */,   8,
+            Offset (0xCF),
+            /* CTLB */,   8,
+            Offset (0xD1),
+            /* BTY  */,   8,
+            Offset (0xD5),
+            /* MFAC */,   8,
+            /* CFAN */,   8,
+            /* PFAN */,   8,
+            /* OCPS */,   8,
+            /* OCPR */,   8,
+            /* OCPE */,   8,
+            /* TMP1 */,   8,
+            /* TMP2 */,   8,
+            /* NABT */,   4,
+            /* BCM  */,   4,
+            /* CCBQ */,   16,
             /* CBT    ,   16, */
-            CBT1      ,   8, 
+            CBT1      ,   8,
             CBT2      ,   8,
-            Offset (0xE3), 
-            /* OST  */,   4, 
-            Offset (0xE4), 
-            /* RWTM */,   8, 
-            /* TPTE */,   1, 
-            /* TBBN */,   1, 
-                      ,   1, 
-            /* FCDE */,   1, 
-                      ,   1, 
-            /* TP   */,   1, 
-            Offset (0xE6), 
-            /* SHK  */,   8, 
-            /* AUDS */,   1, 
-            /* SPKR */,   1, 
-            Offset (0xE8), 
-            /* HSEN */,   4, 
-            /* HSST */,   4, 
-            Offset (0xEA), 
-                      ,   2, 
-            /* WWP  */,   1, 
-            /* WLP  */,   1, 
-                      ,   1, 
-            /* WWS3 */,   1, 
-            /* WLS3 */,   1, 
-            Offset (0xEC), 
-                      ,   4, 
-            /* PTEN */,   1, 
-            /* ERWB */,   1, 
-                      ,   1, 
-            Offset (0xED), 
-            Offset (0xEF), 
-            /* INCH */,   2, 
-            /* IDIS */,   2, 
-            /* INAC */,   1, 
-            Offset (0xF3), 
-            /* COL1 */,   3, 
-                      ,   2, 
-            /* LDCD */,   3, 
-            /* LEDS */,   2, 
-            /* LEDF */,   6, 
-            Offset (0xF6), 
-            /* AAPI */,   8, 
-            /* ACSE */,   8, 
-            /* ACIX */,   8, 
+            Offset (0xE3),
+            /* OST  */,   4,
+            Offset (0xE4),
+            /* RWTM */,   8,
+            /* TPTE */,   1,
+            /* TBBN */,   1,
+                      ,   1,
+            /* FCDE */,   1,
+                      ,   1,
+            /* TP   */,   1,
+            Offset (0xE6),
+            /* SHK  */,   8,
+            /* AUDS */,   1,
+            /* SPKR */,   1,
+            Offset (0xE8),
+            /* HSEN */,   4,
+            /* HSST */,   4,
+            Offset (0xEA),
+                      ,   2,
+            /* WWP  */,   1,
+            /* WLP  */,   1,
+                      ,   1,
+            /* WWS3 */,   1,
+            /* WLS3 */,   1,
+            Offset (0xEC),
+                      ,   4,
+            /* PTEN */,   1,
+            /* ERWB */,   1,
+                      ,   1,
+            Offset (0xED),
+            Offset (0xEF),
+            /* INCH */,   2,
+            /* IDIS */,   2,
+            /* INAC */,   1,
+            Offset (0xF3),
+            /* COL1 */,   3,
+                      ,   2,
+            /* LDCD */,   3,
+            /* LEDS */,   2,
+            /* LEDF */,   6,
+            Offset (0xF6),
+            /* AAPI */,   8,
+            /* ACSE */,   8,
+            /* ACIX */,   8,
             /* ACPR   ,   16, */
             CPR1      ,   8,
             CPR2      ,   8,
-            Offset (0xFD), 
+            Offset (0xFD),
             Offset (0xFF)
         }
-        
+
         Method (BTIF, 1, Serialized)
         {
             If (_OSI ("Darwin"))
@@ -407,9 +378,9 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
                 {
                     Store (Package (0x04)
                         {
-                            Zero, 
-                            0xFFFFFFFF, 
-                            0xFFFFFFFF, 
+                            Zero,
+                            0xFFFFFFFF,
+                            0xFFFFFFFF,
                             0xFFFFFFFF
                         }, Index (NBST, Arg0))
                     Return (0xFF)
@@ -456,31 +427,29 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
                 }
 
                 Store (Local0, Index (DerefOf (Index (NBST, Arg0)), Zero))
-                //If (And (Local0, One))
-                //{
-                //    If (LOr (LLess (Local3, 0x0190), LGreater (Local3, 0x1964)))
-                //    {
-                //        Store (DerefOf (Index (DerefOf (Index (NBST, Arg0)), One)), Local5)
-                //        If (LOr (LLess (Local5, 0x0190), LGreater (Local5, 0x1964)))
-                //        {
-                //            Store (0x0D7A, Local3)
-                //        }
-                //        Else
-                //        {
-                //            Store (Local5, Local3)
-                //        }
-                //    }
-                //
-                //    Store (0xFFFFFFFF, Local3)
-                //}
-                //ElseIf (LEqual (And (Local0, 0x02), Zero))
-                //{
-                //    Store (Zero, Local3)
-                //}
-
-                Store (Zero, Local3)
-                Store (Local3, Index (DerefOf (Index (NBST, Arg0)), One))
+                If (And (Local0, One))
+                {
+                    If (LOr (LLess (Local3, 0x0190), LGreater (Local3, 0x1964)))
+                    {
+                        Store (DerefOf (Index (DerefOf (Index (NBST, Arg0)), One)), Local5)
+                        If (LOr (LLess (Local5, 0x0190), LGreater (Local5, 0x1964)))
+                        {
+                            Store (0x0D7A, Local3)
+                        }
+                        Else
+                        {
+                            Store (Local5, Local3)
+                        }
+                    }
                 
+                    Store (0xFFFFFFFF, Local3)
+                }
+                ElseIf (LEqual (And (Local0, 0x02), Zero))
+                {
+                    Store (Zero, Local3)
+                }
+                Store (Local3, Index (DerefOf (Index (NBST, Arg0)), One))
+
                 Acquire (BTMX, 0xFFFF)
                 And (NGBT, Not (Local7), NGBT)
                 Release (BTMX)
@@ -527,7 +496,7 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
                         Store (Arg0, BSEL)
                         Store (Package (0x02)
                             {
-                                Zero, 
+                                Zero,
                                 Buffer (0x6B){}
                             }, Local0)
                         Store (B1B2 (BDC1, BDC2), Index (DerefOf (Index (Local0, One)), Zero))
@@ -659,7 +628,7 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
                 {
                     Store (Package (0x02)
                         {
-                            Zero, 
+                            Zero,
                             Buffer (0x04){}
                         }, Local0)
                     If (And (BATP, One))
@@ -726,7 +695,7 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
                 {
                     Store (Package (0x02)
                         {
-                            0x35, 
+                            0x35,
                             Zero
                         }, Local0)
                 }
@@ -995,5 +964,100 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATT", 0)
                 Return (\_SB.PCI0.LPCB.EC.XACW ())
             }
         }
+    }
+
+    Scope (_SB)
+    {
+        Name (NBTI, Package ()
+        {
+            Package ()
+            {
+                One,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                One,
+                0xFFFFFFFF,
+                Zero,
+                Zero,
+                0x64,
+                0x64,
+                "Primary",
+                "100000",
+                "LIon",
+                "Apple",
+                Zero,
+                Zero,
+            },
+
+            Package ()
+            {
+                One,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                One,
+                0xFFFFFFFF,
+                Zero,
+                Zero,
+                0x64,
+                0x64,
+                "Travel",
+                "100000",
+                "LIon",
+                "Apple",
+                Zero,
+                Zero,
+            }
+        })
+        
+        Method (BTST, 1, Serialized)
+        {
+            If (_OSI ("Darwin"))
+            {
+                Store (\_SB.PCI0.LPCB.EC.BTST (Arg0, One), Local0)
+                If (LEqual (Local0, Zero)){}
+                
+                // Fix amperage
+                Acquire (\_SB.PCI0.LPCB.EC.ECMX, 0xFFFF)
+                Store (B1B2 (\_SB.PCI0.LPCB.EC.BPR1, \_SB.PCI0.LPCB.EC.BPR2), Local1)
+                Store (Local1, Index (DerefOf (Index (NBST, Arg0)), One))
+                Release (\_SB.PCI0.LPCB.EC.ECMX)
+                
+                Return (DerefOf (Index (NBST, Arg0)))
+            }
+            Else
+            {
+                Return (\_SB.BXST (Arg0))
+            }
+        }
+    }
+
+    Scope (_TZ)
+    {
+        Method (GCGC, 0, Serialized)
+        {
+            If (_OSI ("Darwin"))
+            {
+                Name (LTMP, Buffer (0x02){})
+                If (\_SB.PCI0.LPCB.EC.ECR2)
+                {
+                    Acquire (\_SB.PCI0.LPCB.EC.ECMX, 0xFFFF)
+                    Store (B1B2 (\_SB.PCI0.LPCB.EC.BPR1, \_SB.PCI0.LPCB.EC.BPR2), LTMP)
+                    Release (\_SB.PCI0.LPCB.EC.ECMX)
+                }
+
+                Return (LTMP)
+            }
+            Else
+            {
+                Return (\_TZ.XCGC ())
+            }
+        }
+    }
+
+    Method (B1B2, 2, NotSerialized)
+    {
+        ShiftLeft (Arg1, 8, Local0)
+        Or (Arg0, Local0, Local0)
+        Return (Local0)
     }
 }
