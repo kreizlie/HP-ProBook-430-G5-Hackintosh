@@ -35,23 +35,23 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 - Enable DPTF
 - Disable Media Card Reader
 - Enable Runtime Power Management
-- Disable Extended Idle Power States
+- Enable Extended Idle Power States
 - Enable Deep Sleep
-- Disable Wake when Lid is Opened
+- Enable Wake when Lid is Opened
 - Disable Wake when AC is detected
 - Disable Wake on USB
 - Enable Power Control
 
 ##### What works:
-- macOS Catalina 10.15.6
+- macOS Big Sur Beta
 - Intel HD QE/CI
 - HiDPI Scaled Resolution (1440 x 810)
 - USB 3.0 and USB Type-C Ports
 - Ethernet
-- Audio on internal speaker and headphone
+- Audio on internal speaker, bluetooth and headphone jack
 - Sleep and Wake
 - HDMI Video and Audio
-- AirPort
+- Wi-Fi/AirPort
 - Bluetooth and AirDrop
 - Battery Status
 - CPU Power Management
@@ -63,7 +63,3 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 ##### What doesn't work:
 - FingerPrint Reader
 - SD Card Reader
-
-##### Thanks to:
-- https://www.tonymacx86.com/threads/guide-lenovo-v330-15ikb-using-clover-uefi-hotpatch.265841/
-- https://www.tonymacx86.com/threads/guide-hp-probook-elitebook-zbook-using-clover-uefi-hotpatch-10-11.189416/
