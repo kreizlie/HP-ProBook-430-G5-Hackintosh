@@ -35,7 +35,7 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 - Enable DPTF
 - Disable Media Card Reader
 - Enable Runtime Power Management
-- Disable Extended Idle Power States
+- Enable Extended Idle Power States
 - Enable Deep Sleep
 - Enable Wake when Lid is Opened
 - Disable Wake when AC is detected
@@ -48,7 +48,7 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 - HiDPI Scaled Resolution (1440 x 810)
 - USB 3.0 and USB Type-C Ports
 - Ethernet
-- Audio on internal speaker and headphone
+- Audio on internal speaker, bluetooth and headphone jack
 - Sleep and Wake
 - HDMI Video and Audio
 - Wi-Fi/AirPort
