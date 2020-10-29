@@ -1,4 +1,4 @@
-# HP-ProBook-430G5-Hackintosh
+# HP-ProBook-430-G5-Hackintosh
 
 OpenCore setup for running Hackintosh on HP ProBook 430 G5
 
