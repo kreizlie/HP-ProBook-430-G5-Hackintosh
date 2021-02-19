@@ -12,7 +12,7 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 - 2 USB 3.0 Ports, 1 USB Type-C Port
 - HDMI Port
 - SD Card Reader
-- 250GB Samsung 970 EVO NVME M.2 SSD (upgraded)
+- 250GB Samsung 860 EVO SATA M.2 SSD (upgraded)
 
 ##### BIOS Setup:
 - Disable TPM Security
@@ -43,7 +43,7 @@ OpenCore setup for running Hackintosh on HP ProBook 430 G5
 - Enable Power Control
 
 ##### What works:
-- macOS Big Sur Beta
+- macOS Big Sur
 - Intel HD QE/CI
 - HiDPI Scaled Resolution (1440 x 810)
 - USB 3.0 and USB Type-C Ports
