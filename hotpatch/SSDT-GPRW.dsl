@@ -1,8 +1,9 @@
-// SSDT-XPRW
-// Fixes instant-wake issue
-DefinitionBlock ("", "SSDT", 2, "ACDT", "XPRW", 0x00000000)
+// SSDT-GPRW
+// Fixes instant wake issue
+DefinitionBlock ("", "SSDT", 2, "ACDT", "GPRW", 0x00000000)
 {
-    External (XPRW, MethodObj)
+    // Renamed method in config.plist
+    External (XPRW, MethodObj)    // 2 Arguments
 
     Method (GPRW, 2, NotSerialized)
     {
