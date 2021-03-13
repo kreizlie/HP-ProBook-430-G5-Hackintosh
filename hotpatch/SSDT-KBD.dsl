@@ -1,5 +1,5 @@
 // SSDT-KBD
-// Swaps Command and Option buttons on laptop keyboard
+// Swaps Command and Option keys on laptop keyboard
 DefinitionBlock ("", "SSDT", 2, "ACDT", "KBD", 0x00000000)
 {
     External (_SB.PCI0.LPCB.PS2K, DeviceObj)

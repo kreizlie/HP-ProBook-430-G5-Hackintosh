@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLCYaVOX.aml, Thu Mar 11 16:39:45 2021
+ * Disassembly of iASLwQ8kzX.aml, Sat Mar 13 11:56:13 2021
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x000204F6 (132342)
+ *     Length           0x00021AF2 (137970)
  *     Revision         0x02
- *     Checksum         0x4A
+ *     Checksum         0x79
  *     OEM ID           "HPQOEM"
  *     OEM Table ID     "8377    "
  *     OEM Revision     0x00000000 (0)
@@ -80,6 +80,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
     External (_SB_.PCI0.GFX0.CDCK, UnknownObj)
     External (_SB_.PCI0.GFX0.CDDS, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.GFX0.CLID, UnknownObj)
+    External (_SB_.PCI0.GFX0.DD2F, DeviceObj)
     External (_SB_.PCI0.GFX0.DGCE, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.GFX0.GDCK, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.GFX0.GHDS, MethodObj)    // 1 Arguments
@@ -107,6 +108,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
     External (_SB_.PCI0.PEG1, DeviceObj)
     External (_SB_.PCI0.PEG2, DeviceObj)
     External (_SB_.PCI0.RP01.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP01.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP01.PXSX, DeviceObj)
     External (_SB_.PCI0.RP01.PXSX.DD1F, UnknownObj)
     External (_SB_.PCI0.RP01.PXSX.DIDM, MethodObj)    // 0 Arguments
@@ -115,38 +117,56 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
     External (_SB_.PCI0.RP01.PXSX.SSID, UnknownObj)
     External (_SB_.PCI0.RP01.PXSX.SVID, UnknownObj)
     External (_SB_.PCI0.RP02.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP02.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP03.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP03.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP04.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP04.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP05.GPEH, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP05.PWRG, UnknownObj)
     External (_SB_.PCI0.RP05.RSTG, UnknownObj)
     External (_SB_.PCI0.RP05.SCLK, UnknownObj)
     External (_SB_.PCI0.RP06.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP06.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP07.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP07.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP08.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP08.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP09.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP09.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP09.PWRG, UnknownObj)
     External (_SB_.PCI0.RP09.RSTG, UnknownObj)
     External (_SB_.PCI0.RP09.SCLK, UnknownObj)
     External (_SB_.PCI0.RP10.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP10.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP11, DeviceObj)
     External (_SB_.PCI0.RP11.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP11.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP11.PXSX, DeviceObj)
     External (_SB_.PCI0.RP12.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP12.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP13.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP13.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP13.PWRG, UnknownObj)
     External (_SB_.PCI0.RP13.RSTG, UnknownObj)
     External (_SB_.PCI0.RP13.SCLK, UnknownObj)
     External (_SB_.PCI0.RP14.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP14.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP15.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP15.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP16.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP16.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP17.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP17.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP17.PWRG, UnknownObj)
     External (_SB_.PCI0.RP17.RSTG, UnknownObj)
     External (_SB_.PCI0.RP17.SCLK, UnknownObj)
     External (_SB_.PCI0.RP18.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP18.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP19.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP19.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP20.GPEH, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP20.PPRW, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.SAT0.PRT0.GPEH, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.SAT0.PRT1.GPEH, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.SAT0.PRT2.GPEH, MethodObj)    // 0 Arguments
@@ -261,6 +281,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
     External (WPPE, UnknownObj)    // Conflicts with a later declaration
     External (WPWK, UnknownObj)    // Conflicts with a later declaration
     External (WWBR, UnknownObj)    // Conflicts with a later declaration
+    External (XBAS, UnknownObj)
 
     OperationRegion (HPSA, SystemMemory, 0x83F7D000, 0x00000008)
     Field (HPSA, AnyAcc, Lock, Preserve)
@@ -514,7 +535,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
         NSOR,   32, 
         BIES,   8, 
         GVDT,   8, 
-        APID,   8, 
+        AIOP,   8, 
         NDXN,   8, 
         OTPA,   8, 
         PCPA,   8, 
@@ -4506,7 +4527,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
     Name (SS2, Zero)
     Name (SS3, One)
     Name (SS4, One)
-    OperationRegion (GNVS, SystemMemory, 0x83F69000, 0x07AD)
+    OperationRegion (GNVS, SystemMemory, 0x83F69000, 0x0806)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
         OSYS,   16, 
@@ -4572,6 +4593,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
         LPPR,   8, 
         IDEM,   8, 
         PLID,   8, 
+        APID,   8, 
         BTYP,   8, 
         OSCC,   8, 
         NEXP,   8, 
@@ -4601,6 +4623,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
         TSOD,   8, 
         PFLV,   8, 
         BREV,   8, 
+        WCOS,   8, 
         PDTS,   8, 
         PKGA,   8, 
         PAMT,   8, 
@@ -5112,6 +5135,8 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
         GBTI,   32, 
         GPDI,   32, 
         GPLI,   32, 
+        GPL1,   32, 
+        GPL2,   32, 
         CL00,   8, 
         CL01,   8, 
         CL02,   8, 
@@ -5530,6 +5555,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
         STX7,   8, 
         STX8,   8, 
         STX9,   8, 
+        COEM,   8, 
         RTVM,   8, 
         USTC,   8, 
         BATP,   8, 
@@ -5726,7 +5752,37 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
         BTLL,   8, 
         POME,   8, 
         P193,   8, 
-        PMTC,   8
+        PMTC,   8, 
+        STAS,   8, 
+        LSGN,   8, 
+        PEP1,   32, 
+        SRLD,   8, 
+        TP0T,   8, 
+        TP01,   32, 
+        TP02,   32, 
+        TP03,   32, 
+        TP04,   32, 
+        TP05,   8, 
+        TP06,   8, 
+        TP07,   16, 
+        TP08,   32, 
+        TP09,   32, 
+        TP0A,   32, 
+        TP0B,   32, 
+        TP0C,   32, 
+        TP1T,   8, 
+        TP11,   32, 
+        TP12,   32, 
+        TP13,   32, 
+        TP14,   32, 
+        TP15,   8, 
+        TP16,   8, 
+        TP17,   16, 
+        TP18,   32, 
+        TP19,   32, 
+        TP1A,   32, 
+        TP1B,   32, 
+        TP1C,   32
     }
 
     Scope (_SB)
@@ -8992,6 +9048,58 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                 "Hewlett-Packard"
             }
         })
+        Name (NBTE, Package (0x02)
+        {
+            Package (0x15)
+            {
+                One, 
+                One, 
+                0xFFFFFFFF, 
+                0xFFFFFFFF, 
+                One, 
+                0xFFFFFFFF, 
+                Zero, 
+                Zero, 
+                0x64, 
+                0x00017318, 
+                Zero, 
+                Zero, 
+                Zero, 
+                Zero, 
+                0x64, 
+                0x64, 
+                "Primary", 
+                "123456789", 
+                "LIon", 
+                "Hewlett-Packard", 
+                One
+            }, 
+
+            Package (0x15)
+            {
+                One, 
+                One, 
+                0xFFFFFFFF, 
+                0xFFFFFFFF, 
+                One, 
+                0xFFFFFFFF, 
+                Zero, 
+                Zero, 
+                0x64, 
+                0x00017318, 
+                Zero, 
+                Zero, 
+                Zero, 
+                Zero, 
+                0x64, 
+                0x64, 
+                "Primary", 
+                "100000", 
+                "LIon", 
+                "Hewlett-Packard", 
+                One
+            }
+        })
         Name (NBST, Package (0x02)
         {
             Package (0x04)
@@ -9048,6 +9156,42 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             }
         }
 
+        Method (BTIX, 1, Serialized)
+        {
+            Local0 = ^PCI0.LPCB.EC0.BTIX (Arg0)
+            If ((Local0 == 0xFF))
+            {
+                Return (Package (0x15)
+                {
+                    One, 
+                    One, 
+                    0xFFFFFFFF, 
+                    0xFFFFFFFF, 
+                    One, 
+                    0xFFFFFFFF, 
+                    Zero, 
+                    Zero, 
+                    0x64, 
+                    0x00017318, 
+                    Zero, 
+                    Zero, 
+                    Zero, 
+                    Zero, 
+                    0x64, 
+                    0x64, 
+                    "", 
+                    "", 
+                    "", 
+                    "", 
+                    One
+                })
+            }
+            Else
+            {
+                Return (DerefOf (NBTE [Arg0]))
+            }
+        }
+
         Method (BTST, 1, Serialized)
         {
             Local0 = ^PCI0.LPCB.EC0.BTST (Arg0, One)
@@ -9080,6 +9224,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Method (_BIF, 0, NotSerialized)  // _BIF: Battery Information
             {
                 Return (BTIF (Zero))
+            }
+
+            Method (_BIX, 0, NotSerialized)  // _BIX: Battery Information Extended
+            {
+                Return (BTIX (Zero))
             }
 
             Method (_BST, 0, NotSerialized)  // _BST: Battery Status
@@ -11398,6 +11547,10 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
         OperationRegion (PWMR, SystemMemory, PWRM, 0x0800)
         Field (PWMR, AnyAcc, NoLock, Preserve)
         {
+            ACWA,   32, 
+            DCWA,   32, 
+            ACET,   32, 
+            DCET,   32, 
             Offset (0xE0), 
             Offset (0xE2), 
             DWLE,   1, 
@@ -12881,6 +13034,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -12899,6 +13064,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP01.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -13137,6 +13307,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -13155,6 +13337,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP02.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -13393,6 +13580,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -13411,6 +13610,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP03.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -13649,6 +13853,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -13667,6 +13883,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP04.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -13905,6 +14126,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -14168,6 +14401,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -14186,6 +14431,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP06.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -14424,6 +14674,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -14442,6 +14704,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP07.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -14680,6 +14947,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -14698,6 +14977,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP08.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -14936,6 +15220,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -14954,6 +15250,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP09.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -15192,6 +15493,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -15210,6 +15523,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP10.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -15448,6 +15766,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -15466,6 +15796,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP11.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -15704,6 +16039,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -15722,6 +16069,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP12.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -15960,6 +16312,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -15978,6 +16342,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP13.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -16216,6 +16585,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -16234,6 +16615,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP14.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -16472,6 +16858,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -16490,6 +16888,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP15.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -16728,6 +17131,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -16746,6 +17161,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP16.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -16984,6 +17404,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -17002,6 +17434,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP17.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -17240,6 +17677,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -17258,6 +17707,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP18.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -17496,6 +17950,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -17514,6 +17980,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP19.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -17752,6 +18223,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             Device (PXSX)
             {
                 Name (_ADR, Zero)  // _ADR: Address
+                Name (_DSD, Package (0x02)  // _DSD: Device-Specific Data
+                {
+                    ToUUID ("5025030f-842f-4ab4-a561-99a5189762d0") /* Unknown UUID */, 
+                    Package (0x01)
+                    {
+                        Package (0x02)
+                        {
+                            "StorageD3Enable", 
+                            Zero
+                        }
+                    }
+                })
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x69, 0x04))
@@ -17770,6 +18253,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
+                If (CondRefOf (\_SB.PCI0.RP20.PPRW))
+                {
+                    Return (PPRW ())
+                }
+
                 Return (GPRW (0x69, 0x04))
             }
 
@@ -19220,33 +19708,33 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
         {
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If ((CIOE == One))
-                {
-                    Return (0x0F)
-                }
-                Else
-                {
-                    Return (Zero)
-                }
+                Return (0x0F)
             }
 
-            Name (_HID, "INT343E")  // _HID: Hardware ID
-            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+            If ((CIOE == One))
             {
-                Name (CBUF, ResourceTemplate ()
+                Name (_HID, "INT343E")  // _HID: Hardware ID
+                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                 {
-                    Interrupt (ResourceConsumer, Level, ActiveLow, Shared, ,, _Y15)
+                    Name (CBUF, ResourceTemplate ()
                     {
-                        0x00000010,
-                    }
-                    Memory32Fixed (ReadWrite,
-                        0xFE400000,         // Address Base
-                        0x00010000,         // Address Length
-                        )
-                })
-                CreateDWordField (CBUF, \_SB.PCI0.CIO2._CRS._Y15._INT, CIOV)  // _INT: Interrupts
-                CIOV = CIOI /* \CIOI */
-                Return (CBUF) /* \_SB_.PCI0.CIO2._CRS.CBUF */
+                        Interrupt (ResourceConsumer, Level, ActiveLow, Shared, ,, _Y15)
+                        {
+                            0x00000010,
+                        }
+                        Memory32Fixed (ReadWrite,
+                            0xFE400000,         // Address Base
+                            0x00010000,         // Address Length
+                            )
+                    })
+                    CreateDWordField (CBUF, \_SB.PCI0.CIO2._CRS._Y15._INT, CIOV)  // _INT: Interrupts
+                    CIOV = CIOI /* \CIOI */
+                    Return (CBUF) /* \_SB_.PCI0.CIO2._CRS.CBUF */
+                }
+            }
+            Else
+            {
+                Name (_ADR, 0x00140003)  // _ADR: Address
             }
         }
 
@@ -21436,7 +21924,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                     Return ("FPC1021")
                 }
 
-                Return ("FPNT_DIS")
+                Return ("DUMY0000")
             }
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
@@ -22446,6 +22934,535 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
         }
     }
 
+    Scope (_SB.PCI0.SPI0)
+    {
+        Device (SPL0)
+        {
+            Name (_HID, "PNP0C51")  // _HID: Hardware ID
+            Name (_CID, "PNP0C51")  // _CID: Compatible ID
+            Name (RSTL, Zero)
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                If ((TP0T == 0xFF))
+                {
+                    Return (Zero)
+                }
+
+                Return (0x0F)
+            }
+
+            Method (_INI, 0, NotSerialized)  // _INI: Initialize
+            {
+                SHPO (TP08, One)
+                SHPO (TP0A, One)
+                SPMV (TP08, Zero)
+                SPMV (TP0A, Zero)
+                SGRA (TP0A, One)
+                SPC0 (TP08, (0x42000200 | (~(TP09 & One) & One
+                    )))
+                SPC0 (TP0A, 0x42000100)
+            }
+
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+            {
+                Name (BBUF, ResourceTemplate ()
+                {
+                    SpiSerialBusV2 (0x0000, PolarityLow, FourWireMode, 0x08,
+                        ControllerInitiated, 0x00B71B00, ClockPolarityLow,
+                        ClockPhaseFirst, "\\_SB.PCI0.SPI0",
+                        0x00, ResourceConsumer, _Y2B, Exclusive,
+                        )
+                })
+                Name (GBUF, ResourceTemplate ()
+                {
+                    GpioInt (Level, ActiveLow, ExclusiveAndWake, PullDefault, 0x0000,
+                        "\\_SB.PCI0.GPI0", 0x00, ResourceConsumer, _Y2A,
+                        )
+                        {   // Pin list
+                            0x0000
+                        }
+                })
+                Name (UBUF, ResourceTemplate ()
+                {
+                    GpioIo (Exclusive, PullDefault, 0x0000, 0x0000, IoRestrictionOutputOnly,
+                        "\\_SB.PCI0.GPI0", 0x00, ResourceConsumer, ,
+                        )
+                        {   // Pin list
+                            0x0000
+                        }
+                })
+                CreateWordField (GBUF, 0x17, GPIN)
+                CreateBitField (GBUF, \_SB.PCI0.SPI0.SPL0._CRS._Y2A._POL, GPIP)  // _POL: Polarity
+                CreateBitField (GBUF, \_SB.PCI0.SPI0.SPL0._CRS._Y2A._MOD, GPIT)  // _MOD: Mode
+                CreateWordField (UBUF, 0x17, RPIN)
+                CreateDWordField (BBUF, \_SB.PCI0.SPI0.SPL0._CRS._Y2B._SPE, SPED)  // _SPE: Speed
+                GPIN = GNUM (TP0A)
+                GPIP = TP0B /* \TP0B */
+                GPIT = TP0C /* \TP0C */
+                RPIN = GNUM (TP08)
+                SPED = TP01 /* \TP01 */
+                ConcatenateResTemplate (BBUF, GBUF, Local0)
+                ConcatenateResTemplate (Local0, UBUF, Local1)
+                Return (Local1)
+            }
+
+            Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+            {
+                If ((Arg0 == ToUUID ("6e2ac436-0fcf-41af-a265-b32a220dcfab") /* Unknown UUID */))
+                {
+                    Switch (ToInteger (Arg2))
+                    {
+                        Case (Zero)
+                        {
+                            Switch (ToInteger (Arg1))
+                            {
+                                Case (0x02)
+                                {
+                                    Return (Buffer (One)
+                                    {
+                                         0x7F                                             // .
+                                    })
+                                }
+                                Default
+                                {
+                                    Return (Buffer (One)
+                                    {
+                                         0x00                                             // .
+                                    })
+                                }
+
+                            }
+                        }
+                        Case (One)
+                        {
+                            Return (ToInteger (TP02))
+                        }
+                        Case (0x02)
+                        {
+                            Return (ToInteger (TP03))
+                        }
+                        Case (0x03)
+                        {
+                            Return (ToInteger (TP04))
+                        }
+                        Case (0x04)
+                        {
+                            Name (BUF4, Buffer (One){})
+                            Local0 = ToBuffer (TP05)
+                            BUF4 [Zero] = DerefOf (Local0 [Zero])
+                            Return (BUF4) /* \_SB_.PCI0.SPI0.SPL0._DSM.BUF4 */
+                        }
+                        Case (0x05)
+                        {
+                            Name (BUF5, Buffer (One){})
+                            Local1 = ToBuffer (TP06)
+                            BUF5 [Zero] = DerefOf (Local1 [Zero])
+                            Return (BUF5) /* \_SB_.PCI0.SPI0.SPL0._DSM.BUF5 */
+                        }
+                        Case (0x06)
+                        {
+                            Name (BUF6, Buffer (0x02){})
+                            Local2 = ToBuffer (TP07)
+                            BUF6 [Zero] = DerefOf (Local2 [Zero])
+                            BUF6 [One] = DerefOf (Local2 [One])
+                            Return (BUF6) /* \_SB_.PCI0.SPI0.SPL0._DSM.BUF6 */
+                        }
+                        Default
+                        {
+                            Return (Buffer (One)
+                            {
+                                 0x00                                             // .
+                            })
+                        }
+
+                    }
+
+                    Return (Buffer (One)
+                    {
+                         0x00                                             // .
+                    })
+                }
+
+                Return (Buffer (One)
+                {
+                     0x00                                             // .
+                })
+            }
+
+            Method (_RST, 0, Serialized)  // _RST: Device Reset
+            {
+                While ((RSTL == One))
+                {
+                    Stall (0x0A)
+                }
+
+                RSTL = One
+                SGOV (TP08, (TP09 & One))
+                Sleep (0x012C)
+                SGOV (TP08, (~(TP09 & One) & One))
+                RSTL = Zero
+            }
+        }
+    }
+
+    Scope (_SB.PCI0.SPI1)
+    {
+        Device (SPL1)
+        {
+            Name (_HID, "PNP0C51")  // _HID: Hardware ID
+            Name (_CID, "PNP0C51")  // _CID: Compatible ID
+            Name (RSTL, Zero)
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                If ((TP1T == 0xFF))
+                {
+                    Return (Zero)
+                }
+
+                Return (0x0F)
+            }
+
+            Method (_INI, 0, NotSerialized)  // _INI: Initialize
+            {
+                SHPO (TP18, One)
+                SHPO (TP1A, One)
+                SPMV (TP18, Zero)
+                SPMV (TP1A, Zero)
+                SGRA (TP1A, One)
+                SPC0 (TP18, (0x42000200 | (~(TP19 & One) & One
+                    )))
+                SPC0 (TP1A, 0x42000100)
+            }
+
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+            {
+                Name (BBUF, ResourceTemplate ()
+                {
+                    SpiSerialBusV2 (0x0000, PolarityLow, FourWireMode, 0x08,
+                        ControllerInitiated, 0x00B71B00, ClockPolarityLow,
+                        ClockPhaseFirst, "\\_SB.PCI0.SPI1",
+                        0x00, ResourceConsumer, _Y2D, Exclusive,
+                        )
+                })
+                Name (GBUF, ResourceTemplate ()
+                {
+                    GpioInt (Level, ActiveLow, ExclusiveAndWake, PullDefault, 0x0000,
+                        "\\_SB.PCI0.GPI0", 0x00, ResourceConsumer, _Y2C,
+                        )
+                        {   // Pin list
+                            0x0000
+                        }
+                })
+                Name (UBUF, ResourceTemplate ()
+                {
+                    GpioIo (Exclusive, PullDefault, 0x0000, 0x0000, IoRestrictionOutputOnly,
+                        "\\_SB.PCI0.GPI0", 0x00, ResourceConsumer, ,
+                        )
+                        {   // Pin list
+                            0x0000
+                        }
+                })
+                CreateWordField (GBUF, 0x17, GPIN)
+                CreateBitField (GBUF, \_SB.PCI0.SPI1.SPL1._CRS._Y2C._POL, GPIP)  // _POL: Polarity
+                CreateBitField (GBUF, \_SB.PCI0.SPI1.SPL1._CRS._Y2C._MOD, GPIT)  // _MOD: Mode
+                CreateWordField (UBUF, 0x17, RPIN)
+                CreateDWordField (BBUF, \_SB.PCI0.SPI1.SPL1._CRS._Y2D._SPE, SPED)  // _SPE: Speed
+                GPIN = GNUM (TP1A)
+                GPIP = TP1B /* \TP1B */
+                GPIT = TP1C /* \TP1C */
+                RPIN = GNUM (TP18)
+                SPED = TP11 /* \TP11 */
+                ConcatenateResTemplate (BBUF, GBUF, Local0)
+                ConcatenateResTemplate (Local0, UBUF, Local1)
+                Return (Local1)
+            }
+
+            Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+            {
+                If ((Arg0 == ToUUID ("6e2ac436-0fcf-41af-a265-b32a220dcfab") /* Unknown UUID */))
+                {
+                    Switch (ToInteger (Arg2))
+                    {
+                        Case (Zero)
+                        {
+                            Switch (ToInteger (Arg1))
+                            {
+                                Case (0x02)
+                                {
+                                    Return (Buffer (One)
+                                    {
+                                         0x7F                                             // .
+                                    })
+                                }
+                                Default
+                                {
+                                    Return (Buffer (One)
+                                    {
+                                         0x00                                             // .
+                                    })
+                                }
+
+                            }
+                        }
+                        Case (One)
+                        {
+                            Return (ToInteger (TP12))
+                        }
+                        Case (0x02)
+                        {
+                            Return (ToInteger (TP13))
+                        }
+                        Case (0x03)
+                        {
+                            Return (ToInteger (TP14))
+                        }
+                        Case (0x04)
+                        {
+                            Name (BUF4, Buffer (One){})
+                            Local0 = ToBuffer (TP15)
+                            BUF4 [Zero] = DerefOf (Local0 [Zero])
+                            Return (BUF4) /* \_SB_.PCI0.SPI1.SPL1._DSM.BUF4 */
+                        }
+                        Case (0x05)
+                        {
+                            Name (BUF5, Buffer (One){})
+                            Local1 = ToBuffer (TP16)
+                            BUF5 [Zero] = DerefOf (Local1 [Zero])
+                            Return (BUF5) /* \_SB_.PCI0.SPI1.SPL1._DSM.BUF5 */
+                        }
+                        Case (0x06)
+                        {
+                            Name (BUF6, Buffer (0x02){})
+                            Local2 = ToBuffer (TP17)
+                            BUF6 [Zero] = DerefOf (Local2 [Zero])
+                            BUF6 [One] = DerefOf (Local2 [One])
+                            Return (BUF6) /* \_SB_.PCI0.SPI1.SPL1._DSM.BUF6 */
+                        }
+                        Default
+                        {
+                            Return (Buffer (One)
+                            {
+                                 0x00                                             // .
+                            })
+                        }
+
+                    }
+
+                    Return (Buffer (One)
+                    {
+                         0x00                                             // .
+                    })
+                }
+
+                Return (Buffer (One)
+                {
+                     0x00                                             // .
+                })
+            }
+
+            Method (_RST, 0, Serialized)  // _RST: Device Reset
+            {
+                While ((RSTL == One))
+                {
+                    Stall (0x0A)
+                }
+
+                RSTL = One
+                SGOV (TP18, (TP19 & One))
+                Sleep (0x012C)
+                SGOV (TP18, (~(TP19 & One) & One))
+                RSTL = Zero
+            }
+        }
+    }
+
+    If ((WCOS == One))
+    {
+        Scope (_SB)
+        {
+            Name (C0PF, Package (0x01)
+            {
+                Buffer (0x14)
+                {
+                    /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x20, 0x03, 0xD0, 0x07,  // .... ...
+                    /* 0008 */  0x61, 0x0E, 0x00, 0x00, 0x00, 0x00, 0x80, 0x01,  // a.......
+                    /* 0010 */  0x00, 0x00, 0x00, 0x00                           // ....
+                }
+            })
+            Name (C1PF, Package (0x01)
+            {
+                Buffer (0x14)
+                {
+                    /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x20, 0x03, 0xD0, 0x07,  // .... ...
+                    /* 0008 */  0x61, 0x0E, 0x00, 0x00, 0x04, 0x00, 0x80, 0x01,  // a.......
+                    /* 0010 */  0x00, 0x00, 0x00, 0x00                           // ....
+                }
+            })
+        }
+
+        Scope (\)
+        {
+            Method (PLD1, 0, Serialized)
+            {
+                Return (\_SB.C0PF)
+            }
+        }
+
+        Scope (\)
+        {
+            Method (PLD2, 0, Serialized)
+            {
+                Return (\_SB.C1PF)
+            }
+        }
+
+        Scope (_SB.PCI0.SPI0.SPL0)
+        {
+            Device (TLC1)
+            {
+                Name (_ADR, One)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C0PF) /* \_SB_.C0PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+
+            Device (TLC2)
+            {
+                Name (_ADR, 0x02)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C0PF) /* \_SB_.C0PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+
+            Device (TLC3)
+            {
+                Name (_ADR, 0x03)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C0PF) /* \_SB_.C0PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+
+            Device (TLC4)
+            {
+                Name (_ADR, 0x04)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C0PF) /* \_SB_.C0PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+
+            Device (TLC5)
+            {
+                Name (_ADR, 0x05)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C0PF) /* \_SB_.C0PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+        }
+
+        Scope (_SB.PCI0.SPI1.SPL1)
+        {
+            Device (TLC1)
+            {
+                Name (_ADR, One)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C1PF) /* \_SB_.C1PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+
+            Device (TLC2)
+            {
+                Name (_ADR, 0x02)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C1PF) /* \_SB_.C1PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+
+            Device (TLC3)
+            {
+                Name (_ADR, 0x03)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C1PF) /* \_SB_.C1PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+
+            Device (TLC4)
+            {
+                Name (_ADR, 0x04)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C1PF) /* \_SB_.C1PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+
+            Device (TLC5)
+            {
+                Name (_ADR, 0x05)  // _ADR: Address
+                Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+                {
+                    Return (C1PF) /* \_SB_.C1PF */
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+        }
+    }
+
     Scope (_SB.PCI0.I2C0)
     {
         Device (TPL0)
@@ -22455,7 +23472,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             {
                 I2cSerialBusV2 (0x004C, ControllerInitiated, 0x00061A80,
                     AddressingMode7Bit, "\\_SB.PCI0.I2C0",
-                    0x00, ResourceConsumer, _Y2A, Exclusive,
+                    0x00, ResourceConsumer, _Y2E, Exclusive,
                     )
             })
             Name (SBFG, ResourceTemplate ()
@@ -22469,14 +23486,14 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             })
             Name (SBFI, ResourceTemplate ()
             {
-                Interrupt (ResourceConsumer, Level, ActiveLow, Exclusive, ,, _Y2B)
+                Interrupt (ResourceConsumer, Level, ActiveLow, Exclusive, ,, _Y2F)
                 {
                     0x00000000,
                 }
             })
-            CreateWordField (SBFB, \_SB.PCI0.I2C0.TPL0._Y2A._ADR, BADR)  // _ADR: Address
-            CreateDWordField (SBFB, \_SB.PCI0.I2C0.TPL0._Y2A._SPE, SPED)  // _SPE: Speed
-            CreateDWordField (SBFI, \_SB.PCI0.I2C0.TPL0._Y2B._INT, INT2)  // _INT: Interrupts
+            CreateWordField (SBFB, \_SB.PCI0.I2C0.TPL0._Y2E._ADR, BADR)  // _ADR: Address
+            CreateDWordField (SBFB, \_SB.PCI0.I2C0.TPL0._Y2E._SPE, SPED)  // _SPE: Speed
+            CreateDWordField (SBFI, \_SB.PCI0.I2C0.TPL0._Y2F._INT, INT2)  // _INT: Interrupts
             CreateWordField (SBFG, 0x17, INT1)
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
@@ -22555,7 +23572,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                 {
                     I2cSerialBusV2 (0x0029, ControllerInitiated, 0x00061A80,
                         AddressingMode7Bit, "\\_SB.PCI0.I2C1",
-                        0x00, ResourceConsumer, _Y2C, Exclusive,
+                        0x00, ResourceConsumer, _Y30, Exclusive,
                         )
                     GpioInt (Edge, ActiveHigh, ExclusiveAndWake, PullDefault, 0x0000,
                         "\\_SB.PCI0.GPI0", 0x00, ResourceConsumer, ,
@@ -22576,8 +23593,8 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                             0x0000
                         }
                 })
-                CreateWordField (SBUF, \_SB.PCI0.I2C1.NFC1._CRS._Y2C._ADR, NADR)  // _ADR: Address
-                CreateDWordField (SBUF, \_SB.PCI0.I2C1.NFC1._CRS._Y2C._SPE, NSPD)  // _SPE: Speed
+                CreateWordField (SBUF, \_SB.PCI0.I2C1.NFC1._CRS._Y30._ADR, NADR)  // _ADR: Address
+                CreateDWordField (SBUF, \_SB.PCI0.I2C1.NFC1._CRS._Y30._SPE, NSPD)  // _SPE: Speed
                 CreateWordField (SBUF, 0x38, NFCA)
                 CreateWordField (SBUF, 0x60, NFCB)
                 CreateWordField (SBUF, 0x88, NFCC)
@@ -22613,7 +23630,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             {
                 I2cSerialBusV2 (0x002C, ControllerInitiated, 0x00061A80,
                     AddressingMode7Bit, "\\_SB.PCI0.I2C1",
-                    0x00, ResourceConsumer, _Y2D, Exclusive,
+                    0x00, ResourceConsumer, _Y31, Exclusive,
                     )
             })
             Name (SBFG, ResourceTemplate ()
@@ -22627,14 +23644,14 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             })
             Name (SBFI, ResourceTemplate ()
             {
-                Interrupt (ResourceConsumer, Level, ActiveLow, ExclusiveAndWake, ,, _Y2E)
+                Interrupt (ResourceConsumer, Level, ActiveLow, ExclusiveAndWake, ,, _Y32)
                 {
                     0x00000000,
                 }
             })
-            CreateWordField (SBFB, \_SB.PCI0.I2C1.TPD0._Y2D._ADR, BADR)  // _ADR: Address
-            CreateDWordField (SBFB, \_SB.PCI0.I2C1.TPD0._Y2D._SPE, SPED)  // _SPE: Speed
-            CreateDWordField (SBFI, \_SB.PCI0.I2C1.TPD0._Y2E._INT, INT2)  // _INT: Interrupts
+            CreateWordField (SBFB, \_SB.PCI0.I2C1.TPD0._Y31._ADR, BADR)  // _ADR: Address
+            CreateDWordField (SBFB, \_SB.PCI0.I2C1.TPD0._Y31._SPE, SPED)  // _SPE: Speed
+            CreateDWordField (SBFI, \_SB.PCI0.I2C1.TPD0._Y32._INT, INT2)  // _INT: Interrupts
             CreateWordField (SBFG, 0x17, INT1)
             Method (_INI, 0, Serialized)  // _INI: Initialize
             {
@@ -22727,6 +23744,68 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
     {
         Scope (_SB.PCI0)
         {
+            Method (DLLR, 5, Serialized)
+            {
+                ADBG ("SD DLL restore flow")
+                Name (TEMP, Zero)
+                Name (EMPB, Zero)
+                EMPB = XBAS /* External reference */
+                EMPB |= (Arg0 << 0x14)
+                EMPB |= (Arg1 << 0x0F)
+                EMPB |= (Arg2 << 0x0C)
+                OperationRegion (EMPC, SystemMemory, EMPB, 0x0100)
+                Field (EMPC, DWordAcc, NoLock, Preserve)
+                {
+                    Offset (0x04), 
+                        ,   1, 
+                    MSE,    1, 
+                    Offset (0x10), 
+                    BAR0,   64, 
+                    Offset (0x84), 
+                    PSTA,   32
+                }
+
+                Name (OPST, Zero)
+                OPST = PSTA /* \_SB_.PCI0.DLLR.PSTA */
+                PSTA &= 0xFFFFFFFC
+                TEMP = PSTA /* \_SB_.PCI0.DLLR.PSTA */
+                Name (OMSE, Zero)
+                OMSE = MSE /* \_SB_.PCI0.DLLR.MSE_ */
+                MSE = Zero
+                Name (OBAR, Zero)
+                OBAR = BAR0 /* \_SB_.PCI0.DLLR.BAR0 */
+                BAR0 = Arg3
+                TEMP = BAR0 /* \_SB_.PCI0.DLLR.BAR0 */
+                MSE = One
+                OperationRegion (EMMI, SystemMemory, Arg3, Arg4)
+                Field (EMMI, DWordAcc, NoLock, Preserve)
+                {
+                    Offset (0x834), 
+                    FDLL,   8, 
+                    Offset (0x840), 
+                    ADLL,   8
+                }
+
+                Name (FDLV, Zero)
+                Name (ADLV, Zero)
+                FDLV = FDLL /* \_SB_.PCI0.DLLR.FDLL */
+                ADLV = ADLL /* \_SB_.PCI0.DLLR.ADLL */
+                ADBG (Concatenate ("Fixed DLL value ", ToHexString (FDLV)))
+                ADBG (Concatenate ("Auto DLL Value ", ToHexString (ADLV)))
+                If ((ADLV != Zero))
+                {
+                    ADBG ("Auto tuning executed, restoring values")
+                    ADLV *= 0x02
+                    FDLL = ADLV /* \_SB_.PCI0.DLLR.ADLV */
+                }
+
+                MSE = Zero
+                BAR0 = OBAR /* \_SB_.PCI0.DLLR.OBAR */
+                MSE = OMSE /* \_SB_.PCI0.DLLR.OMSE */
+                PSTA = OPST /* \_SB_.PCI0.DLLR.OPST */
+                TEMP = PSTA /* \_SB_.PCI0.DLLR.PSTA */
+            }
+
             Device (PEMC)
             {
                 Name (_ADR, 0x001E0004)  // _ADR: Address
@@ -22752,6 +23831,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
                 {
+                    DLLR (Zero, 0x1E, 0x04, 0xFE0B0000, 0x00010000)
                     PGEN = One
                     PSTA |= 0x03
                     TEMP = PSTA /* \_SB_.PCI0.PEMC.PSTA */
@@ -23241,6 +24321,8 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                     ,   1, 
                 WWS3,   1, 
                 WLS3,   1, 
+                Offset (0xEB), 
+                DKST,   1, 
                 Offset (0xEC), 
                     ,   4, 
                 PTEN,   1, 
@@ -23536,6 +24618,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
 
             Name (NGBF, 0xFF)
             Name (NGBT, 0xFF)
+            Name (NBGX, 0xFF)
             Name (GACP, 0x07)
             Name (ACST, One)
             Name (SMAR, Zero)
@@ -23633,6 +24716,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                 If ((GACP & 0x02))
                 {
                     NGBF |= Arg1
+                    NBGX |= Arg1
                 }
 
                 If ((GACP & 0x04))
@@ -23788,9 +24872,8 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                 If (ECRG)
                 {
                     BSEL = Arg0
-                    Local0 = BFC /* \_SB_.PCI0.LPCB.EC0_.BFC_ */
-                    DerefOf (NBTI [Arg0]) [One] = Local0
-                    DerefOf (NBTI [Arg0]) [0x02] = Local0
+                    DerefOf (NBTI [Arg0]) [One] = BDC /* \_SB_.PCI0.LPCB.EC0_.BDC_ */
+                    DerefOf (NBTI [Arg0]) [0x02] = BFC /* \_SB_.PCI0.LPCB.EC0_.BFC_ */
                     DerefOf (NBTI [Arg0]) [0x04] = BDV /* \_SB_.PCI0.LPCB.EC0_.BDV_ */
                     Local0 = (BFC * NLB1) /* \_SB_.PCI0.LPCB.EC0_.NLB1 */
                     Local4 = (Local0 / 0x64)
@@ -23807,6 +24890,54 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                 DerefOf (NBTI [Arg0]) [0x0A] = Local2
                 Acquire (BTMX, 0xFFFF)
                 NGBF &= ~Local7
+                Release (BTMX)
+                Return (Zero)
+            }
+
+            Method (BTIX, 1, Serialized)
+            {
+                Local7 = (One << Arg0)
+                BTDR (One)
+                If ((BSTA (Local7) == 0x0F))
+                {
+                    Return (0xFF)
+                }
+
+                Acquire (BTMX, 0xFFFF)
+                Local0 = NBGX /* \_SB_.PCI0.LPCB.EC0_.NBGX */
+                Release (BTMX)
+                If (((Local0 & Local7) == Zero))
+                {
+                    Return (Zero)
+                }
+
+                NBST [Arg0] = NDBS /* \_SB_.NDBS */
+                Acquire (BTMX, 0xFFFF)
+                NGBT |= Local7
+                Release (BTMX)
+                Acquire (ECMX, 0xFFFF)
+                If (ECRG)
+                {
+                    BSEL = Arg0
+                    DerefOf (NBTE [Arg0]) [0x02] = BDC /* \_SB_.PCI0.LPCB.EC0_.BDC_ */
+                    DerefOf (NBTE [Arg0]) [0x03] = BFC /* \_SB_.PCI0.LPCB.EC0_.BFC_ */
+                    DerefOf (NBTE [Arg0]) [0x05] = BDV /* \_SB_.PCI0.LPCB.EC0_.BDV_ */
+                    Local0 = (BFC * NLB1) /* \_SB_.PCI0.LPCB.EC0_.NLB1 */
+                    Local4 = (Local0 / 0x64)
+                    DerefOf (NBTE [Arg0]) [0x06] = Local4
+                    Local0 = (BFC * NLO2) /* \_SB_.PCI0.LPCB.EC0_.NLO2 */
+                    Local4 = (Local0 / 0x64)
+                    DerefOf (NBTE [Arg0]) [0x07] = Local4
+                    DerefOf (NBTE [Arg0]) [0x08] = BCC /* \_SB_.PCI0.LPCB.EC0_.BCC_ */
+                    Local0 = BSN /* \_SB_.PCI0.LPCB.EC0_.BSN_ */
+                    Local1 = BDAT /* \_SB_.PCI0.LPCB.EC0_.BDAT */
+                }
+
+                Release (ECMX)
+                Local2 = GBSS (Local0, Local1)
+                DerefOf (NBTE [Arg0]) [0x11] = Local2
+                Acquire (BTMX, 0xFFFF)
+                NBGX &= ~Local7
                 Release (BTMX)
                 Return (Zero)
             }
@@ -24612,7 +25743,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                 Memory32Fixed (ReadWrite,
                     0xFED00000,         // Address Base
                     0x00000400,         // Address Length
-                    _Y2F)
+                    _Y33)
             })
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
@@ -24628,7 +25759,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
             {
                 If (HPTE)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0.LPCB.HPET._Y2F._BAS, HPT0)  // _BAS: Base Address
+                    CreateDWordField (BUF0, \_SB.PCI0.LPCB.HPET._Y33._BAS, HPT0)  // _BAS: Base Address
                     HPT0 = HPTB /* \HPTB */
                 }
 
@@ -24920,6 +26051,17 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                 IRQNoFlags ()
                     {8}
             })
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                If ((STAS == One))
+                {
+                    Return (0x0F)
+                }
+                Else
+                {
+                    Return (Zero)
+                }
+            }
         }
 
         Device (TIMR)
@@ -26149,13 +27291,13 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                     0x0000000000000000, // Range Maximum
                     0x0000000000000000, // Translation Offset
                     0x0000000000000001, // Length
-                    ,, _Y30, AddressRangeMemory, TypeStatic)
+                    ,, _Y34, AddressRangeMemory, TypeStatic)
             })
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                CreateQWordField (RBUF, \_SB.EPC._Y30._MIN, EMIN)  // _MIN: Minimum Base Address
-                CreateQWordField (RBUF, \_SB.EPC._Y30._MAX, EMAX)  // _MAX: Maximum Base Address
-                CreateQWordField (RBUF, \_SB.EPC._Y30._LEN, ELEN)  // _LEN: Length
+                CreateQWordField (RBUF, \_SB.EPC._Y34._MIN, EMIN)  // _MIN: Minimum Base Address
+                CreateQWordField (RBUF, \_SB.EPC._Y34._MAX, EMAX)  // _MAX: Maximum Base Address
+                CreateQWordField (RBUF, \_SB.EPC._Y34._LEN, ELEN)  // _LEN: Length
                 EMIN = \_PR.EMNA /* External reference */
                 ELEN = \_PR.ELNG /* External reference */
                 EMAX = ((\_PR.EMNA + \_PR.ELNG) - One)
@@ -28302,19 +29444,19 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00008000,         // Address Length
-                    _Y31)
+                    _Y35)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00001000,         // Address Length
-                    _Y32)
+                    _Y36)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00001000,         // Address Length
-                    _Y33)
+                    _Y37)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00000000,         // Address Length
-                    _Y34)
+                    _Y38)
                 Memory32Fixed (ReadWrite,
                     0xFED20000,         // Address Base
                     0x00020000,         // Address Length
@@ -28338,32 +29480,32 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "8377    ", 0x00000000)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00000000,         // Address Length
-                    _Y35)
+                    _Y39)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00000000,         // Address Length
-                    _Y36)
+                    _Y3A)
             })
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y31._BAS, MBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y35._BAS, MBR0)  // _BAS: Base Address
                 MBR0 = GMHB ()
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y32._BAS, DBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y36._BAS, DBR0)  // _BAS: Base Address
                 DBR0 = GDMB ()
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y33._BAS, EBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y37._BAS, EBR0)  // _BAS: Base Address
                 EBR0 = GEPB ()
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y34._BAS, XBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y38._BAS, XBR0)  // _BAS: Base Address
                 XBR0 = GPCB ()
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y34._LEN, XSZ0)  // _LEN: Length
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y38._LEN, XSZ0)  // _LEN: Length
                 XSZ0 = GPCL ()
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y35._BAS, SXRA)  // _BAS: Base Address
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y39._BAS, SXRA)  // _BAS: Base Address
                 SXRA = SXRB /* \SXRB */
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y35._LEN, SXRL)  // _LEN: Length
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y39._LEN, SXRL)  // _LEN: Length
                 SXRL = SXRS /* \SXRS */
                 If (!HPTE)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y36._BAS, HBAS)  // _BAS: Base Address
-                    CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y36._LEN, HLEN)  // _LEN: Length
+                    CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y3A._BAS, HBAS)  // _BAS: Base Address
+                    CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y3A._LEN, HLEN)  // _LEN: Length
                     HBAS = HPTB /* \HPTB */
                     HLEN = 0x0400
                 }

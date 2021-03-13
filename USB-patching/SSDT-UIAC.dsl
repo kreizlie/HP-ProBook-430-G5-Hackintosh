@@ -4,7 +4,6 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "UIAC", 0x00000000)
     Device (UIAC)
     {
         Name (_HID, "UIA00000")  // _HID: Hardware ID
-        
         Name (RMCF, Package (0x02)
         {
             "XHC", 

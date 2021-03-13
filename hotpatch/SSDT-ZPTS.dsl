@@ -2,8 +2,8 @@
 // Simulates S5 call for proper shutdown
 DefinitionBlock ("", "SSDT", 2, "ACDT", "ZPTS", 0x00000000)
 {
-    External (_SB.PCI0.XHC_.PMEE, FieldUnitObj)
-    External (ZPTS, MethodObj)
+    External (_SB.PCI0.XHC.PMEE, FieldUnitObj)
+    External (ZPTS, MethodObj)    // 1 Arguments
 
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {

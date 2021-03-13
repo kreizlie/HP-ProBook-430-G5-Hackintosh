@@ -1,9 +1,7 @@
 // SSDT-BAT
+// For battery status
 DefinitionBlock ("", "SSDT", 2, "ACDT", "BAT", 0x00001000)
 {
-    External (_SB.NBST, PkgObj)
-    External (_SB.NBTI, PkgObj)
-    External (_SB.NDBS, PkgObj)
     External (_SB.PCI0.LPCB.EC0, DeviceObj)
     External (_SB.PCI0.LPCB.EC0.BSEL, FieldUnitObj)
     External (_SB.PCI0.LPCB.EC0.BST, FieldUnitObj)
@@ -14,42 +12,60 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BAT", 0x00001000)
     External (_SB.PCI0.LPCB.EC0.ECRG, IntObj)
     External (_SB.PCI0.LPCB.EC0.GACS, MethodObj)    // 0 Arguments
     External (_SB.PCI0.LPCB.EC0.GBSS, MethodObj)    // 2 Arguments
+    External (_SB.PCI0.LPCB.EC0.NBGX, IntObj)
     External (_SB.PCI0.LPCB.EC0.NDCB, IntObj)
     External (_SB.PCI0.LPCB.EC0.NGBF, IntObj)
     External (_SB.PCI0.LPCB.EC0.NGBT, IntObj)
     External (_SB.PCI0.LPCB.EC0.NLB1, IntObj)
-    External (_SB.PCI0.LPCB.EC0.NLB2, IntObj)
     External (_SB.PCI0.LPCB.EC0.NLO2, IntObj)
     
-    // Renamed methods in config.plist
-    External (_SB.PCI0.LPCB.EC0.XTIF, MethodObj)    // 1 Arguments
-    External (_SB.PCI0.LPCB.EC0.XTST, MethodObj)    // 2 Arguments
+    External (_SB.NBST, PkgObj)
+    External (_SB.NBTE, PkgObj)
+    External (_SB.NBTI, PkgObj)
+    External (_SB.NDBS, PkgObj)
     
     External (BST, IntObj)
     External (ECRG, IntObj)
+    External (NBGX, IntObj)
     External (NDBS, IntObj)
     External (NGBF, IntObj)
     External (NGBT, IntObj)
 
+    // Renamed methods in config.plist
+    External (_SB.PCI0.LPCB.EC0.XTIF, MethodObj)    // 1 Arguments
+    External (_SB.PCI0.LPCB.EC0.XTST, MethodObj)    // 2 Arguments
+    External (_SB.PCI0.LPCB.EC0.ZTIX, MethodObj)    // 1 Arguments
+    
     Scope (_SB.PCI0.LPCB.EC0)
     {
-        // Replaces > 8 bits registers
+        // Replace >= 8 bits registers
         OperationRegion (ECRR, EmbeddedControl, Zero, 0xFF)
         Field (ECRR, ByteAcc, NoLock, Preserve)
         {
-            Offset (0x8D),
-            BFC1,   8, BFC2,   8,     // BFC
-            Offset (0x95),
-            BDV1,   8, BDV2,   8,     // BDV
-            Offset (0x9D),
-            BPR1,   8, BPR2,   8,     // BPR
-            Offset (0xA1),
-            BRC1,   8, BRC2,   8,     // BCR
-            Offset (0xA5),
-            BPV1,   8, BPV2,   8,     // BPV
-            Offset (0xC9),
-            BSN1,   8, BSN2,   8,     // BSN
-            BDA1,   8, BDA2,   8,     // BDAT
+            Offset (0x89), 
+            BDC1,   8, // BDC
+            BDC2,   8, 
+            Offset (0x8D), 
+            BFC1,   8, // BFC
+            BFC2,   8, 
+            Offset (0x95), 
+            BDV1,   8, // BDV
+            BDV2,   8, 
+            Offset (0x9D), 
+            BPR1,   8, // BPR
+            BPR2,   8, 
+            Offset (0xA1), 
+            BRC1,   8, // BRC
+            BRC2,   8, 
+            BCC1,   8, // BCC
+            BCC2,   8, 
+            BPV1,   8, // BPV
+            BPV2,   8, 
+            Offset (0xC9), 
+            BSN1,   8, // BSN
+            BSN2,   8, 
+            BDA1,   8, // BDAT
+            BDA2,   8, 
             Offset (0xFF)
         }
 
@@ -80,9 +96,8 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BAT", 0x00001000)
                 If (ECRG)
                 {
                     BSEL = Arg0
-                    Local0 = B1B2 (BFC1, BFC2)
-                    DerefOf (NBTI [Arg0]) [One] = Local0
-                    DerefOf (NBTI [Arg0]) [0x02] = Local0
+                    DerefOf (NBTI [Arg0]) [One] = B1B2 (BDC1, BDC2)
+                    DerefOf (NBTI [Arg0]) [0x02] = B1B2 (BFC1, BFC2)
                     DerefOf (NBTI [Arg0]) [0x04] = B1B2 (BDV1, BDV2)
                     Local0 = (B1B2 (BFC1, BFC2) * NLB1) /* External reference */
                     Local4 = (Local0 / 0x64)
@@ -105,6 +120,61 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BAT", 0x00001000)
             Else
             {
                 Return (\_SB.PCI0.LPCB.EC0.XTIF (Arg0))
+            }
+        }
+
+        Method (BTIX, 1, Serialized)
+        {
+            If (_OSI ("Darwin"))
+            {
+                Local7 = (One << Arg0)
+                BTDR (One)
+                If ((BSTA (Local7) == 0x0F))
+                {
+                    Return (0xFF)
+                }
+
+                Acquire (BTMX, 0xFFFF)
+                Local0 = NBGX /* External reference */
+                Release (BTMX)
+                If (((Local0 & Local7) == Zero))
+                {
+                    Return (Zero)
+                }
+
+                NBST [Arg0] = NDBS /* External reference */
+                Acquire (BTMX, 0xFFFF)
+                NGBT |= Local7
+                Release (BTMX)
+                Acquire (ECMX, 0xFFFF)
+                If (ECRG)
+                {
+                    BSEL = Arg0
+                    DerefOf (NBTE [Arg0]) [0x02] = B1B2 (BDC1, BDC2)
+                    DerefOf (NBTE [Arg0]) [0x03] = B1B2 (BFC1, BFC2)
+                    DerefOf (NBTE [Arg0]) [0x05] = B1B2 (BDV1, BDV2)
+                    Local0 = (B1B2 (BFC1, BFC2) * NLB1) /* External reference */
+                    Local4 = (Local0 / 0x64)
+                    DerefOf (NBTE [Arg0]) [0x06] = Local4
+                    Local0 = (B1B2 (BFC1, BFC2) * NLO2) /* External reference */
+                    Local4 = (Local0 / 0x64)
+                    DerefOf (NBTE [Arg0]) [0x07] = Local4
+                    DerefOf (NBTE [Arg0]) [0x08] = B1B2 (BCC1, BCC2)
+                    Local0 = B1B2 (BSN1, BSN2)
+                    Local1 = B1B2 (BDA1, BDA2)
+                }
+
+                Release (ECMX)
+                Local2 = GBSS (Local0, Local1)
+                DerefOf (NBTE [Arg0]) [0x11] = Local2
+                Acquire (BTMX, 0xFFFF)
+                NBGX &= ~Local7
+                Release (BTMX)
+                Return (Zero)
+            }
+            Else
+            {
+                Return (\_SB.PCI0.LPCB.EC0.ZTIX (Arg0))
             }
         }
 
@@ -209,3 +279,4 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BAT", 0x00001000)
         Return (Local0)
     }
 }
+
